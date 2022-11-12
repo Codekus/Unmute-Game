@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6412167512475945535}
   - component: {fileID: 2984034585806866095}
   - component: {fileID: 4234150598549234535}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: EnemyCubeBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 8668479730290498177}
   - component: {fileID: 3012827274325517049}
   - component: {fileID: 7067584717664871307}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: EnemyCubeHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6249503b61615c34d837388c9fc78a0f, type: 2}
+  - {fileID: 2100000, guid: b377dece1312cce448bce2a201740f9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
