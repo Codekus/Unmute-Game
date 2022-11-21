@@ -1613,14 +1613,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicPlayer: {fileID: 1955919454}
   cubes:
-  - {fileID: 7141089764402501378, guid: 12d7a0a119aa8474aaeef5d7cb9d4933, type: 3}
-  - {fileID: 7141089764402501378, guid: 12d7a0a119aa8474aaeef5d7cb9d4933, type: 3}
+  - {fileID: 6649091439407276074, guid: 310350c12547f0f498b35ba067088677, type: 3}
+  - {fileID: 9181659032665565523, guid: a0d8eb6a1f53c0d4483e78ae25e1047b, type: 3}
   points:
   - {fileID: 1684327046}
   - {fileID: 237965091}
   - {fileID: 790889195}
   - {fileID: 879783115}
-  beat: 0.4
+  beat: 0.5
 --- !u!4 &1851702935
 Transform:
   m_ObjectHideFlags: 0
