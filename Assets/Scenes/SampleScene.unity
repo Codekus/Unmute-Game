@@ -1620,7 +1620,6 @@ MonoBehaviour:
   - {fileID: 237965091}
   - {fileID: 790889195}
   - {fileID: 879783115}
-  beat: 0.5
 --- !u!4 &1851702935
 Transform:
   m_ObjectHideFlags: 0
