@@ -35,14 +35,10 @@ public class MusicProcessor : MonoBehaviour
     }
 
 
-    public void getInformation(int sample) {
+    public bool getInformation(int sample) {
         if (volumeValues[(int)(sample / bufferSize)] > volumeThreshHold) {
-
-            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            Rigidbody cubeBody = cube.AddComponent<Rigidbody>();
-            cubeBody.isKinematic = false ;
-            cube.transform.position = new Vector3(0, 0.5f, 0);
-
+            return true;
         }
+        return false;
     }
 }

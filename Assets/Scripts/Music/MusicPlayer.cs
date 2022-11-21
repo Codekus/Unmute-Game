@@ -22,14 +22,19 @@ public class MusicPlayer : MonoBehaviour
         audioSource.Play();
     }
 
+    public bool getInformation() {
+        return musicProcessor.getInformation(audioSource.timeSamples);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        /*
         timer += Time.deltaTime;
         if (timer > 0.025)
         {
             timer = 0;
             musicProcessor.getInformation(audioSource.timeSamples);
-        }
+        }*/
     }
 }
