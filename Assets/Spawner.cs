@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     private float timer;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
