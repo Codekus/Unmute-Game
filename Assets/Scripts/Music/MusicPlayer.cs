@@ -6,8 +6,7 @@ public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] AudioClip music;
     AudioSource audioSource;
-    MusicProcessor musicProcessor = new MusicProcessor(320);
-    float timer;
+    MusicProcessor musicProcessor = new MusicProcessor(6);
     
     // Start is called before the first frame update
     void Start()
@@ -26,15 +25,5 @@ public class MusicPlayer : MonoBehaviour
         return musicProcessor.getInformation(audioSource.timeSamples);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        /*
-        timer += Time.deltaTime;
-        if (timer > 0.025)
-        {
-            timer = 0;
-            musicProcessor.getInformation(audioSource.timeSamples);
-        }*/
-    }
+
 }

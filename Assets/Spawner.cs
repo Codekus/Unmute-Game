@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer >= beat && musicPlayer.getInformation())
+        if (musicPlayer.getInformation())
         {
             GameObject cube = Instantiate(cubes[Random.Range(0, 2)], points[Random.Range(0, 4)]);
             cube.transform.localPosition = Vector3.zero;
