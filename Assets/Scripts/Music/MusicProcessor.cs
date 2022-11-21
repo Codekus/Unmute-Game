@@ -64,8 +64,8 @@ public class MusicProcessor : MonoBehaviour
     }
 
 
-    public MusicProcessor(int resolutionPerSec = 4, float volumeThreshHold = 0.25f) {
-        bufferSize = 44100/ resolutionPerSec;
+    public MusicProcessor(int resolutionPerSec = 4, float volumeThreshHold = 0.25f, int samplingRate = 44100) {
+        bufferSize = samplingRate / resolutionPerSec;
         this.volumeThreshHold = volumeThreshHold;
     }
 

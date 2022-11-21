@@ -6,7 +6,7 @@ public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] AudioClip music;
     AudioSource audioSource;
-    MusicProcessor musicProcessor = new MusicProcessor(6,0.25f);
+    MusicProcessor musicProcessor = new MusicProcessor(resolutionPerSec:6, volumeThreshHold:0.25f);
     
     // Start is called before the first frame update
     void Start()
