@@ -6,7 +6,7 @@ public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] AudioClip music;
     AudioSource audioSource;
-    MusicProcessor musicProcessor = new MusicProcessor(6);
+    MusicProcessor musicProcessor = new MusicProcessor(6,0.25f);
     
     // Start is called before the first frame update
     void Start()
@@ -14,7 +14,7 @@ public class MusicPlayer : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = music;
 
-        audioSource.volume = 0.5f;
+        audioSource.volume = 1f;
 
         musicProcessor.AudioClip  = music;
 

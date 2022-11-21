@@ -11,9 +11,9 @@ public class MusicProcessor : MonoBehaviour
     int[] usedTable;
     int currentState = 0;
 
-    float volumeThreshHold = 0.3f;
-
+    float volumeThreshHold;
     int bufferSize;
+
     private AudioClip audioClip;
     public AudioClip AudioClip
     {
@@ -35,27 +35,27 @@ public class MusicProcessor : MonoBehaviour
                 volumeValues[i / bufferSize] /= audioBuffer.Length;
             }
 
-            int count = 0;
+            int c1 = 0;
             //create spawn table        
             for (int i = 1; i < volumeValues.Length-1; i++) {
                 if (volumeValues[i] == 0) continue;
-                if (volumeValues[i - 1] < volumeValues[i] && volumeValues[i + 1] < volumeValues[i] && volumeValues[i] >= volumeValues[i])
+                if (volumeValues[i - 1] < volumeValues[i] && volumeValues[i + 1] < volumeValues[i] && volumeValues[i] >= volumeThreshHold)
                 {
                     volumeValues[i - 1] = 0;
                     volumeValues[i + 1] = 0;
-                    count++;
+                    c1++;
                 }
                 else {
                     volumeValues[i] = 0;
                 }
             }
 
-            spawnTabel = new int[count];
-            count = 0;
+            spawnTabel = new int[c1];
+            int c2 = 0;
             for (int i = 1; i < volumeValues.Length-1; i++) {
                 if (volumeValues[i] != 0) {
-                    spawnTabel[count] = i*bufferSize;
-                    count++;
+                    spawnTabel[c2] = i*bufferSize;
+                    c2++;
                 }
             }
 
@@ -64,17 +64,15 @@ public class MusicProcessor : MonoBehaviour
     }
 
 
-    public MusicProcessor(int resolutionPerSec = 4) {
+    public MusicProcessor(int resolutionPerSec = 4, float volumeThreshHold = 0.25f) {
         bufferSize = 44100/ resolutionPerSec;
+        this.volumeThreshHold = volumeThreshHold;
     }
 
     public void reset()
     {
         usedTable = (int[]) spawnTabel.Clone();
         currentState = 0;
-        for (int i = 0; i < usedTable.Length; i++) {
-            print(usedTable[i]);
-        }
     }
 
     public bool getInformation(int sample) {
