@@ -16,7 +16,7 @@ public class Cube : MonoBehaviour
         //transform.position +=  new Vector3(Time.deltaTime,1,1) + transform.forward ;
         Vector3 velocity = new Vector3(0,0,1);
         transform.Translate(velocity * Time.deltaTime * -2);
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
         
     }
 }

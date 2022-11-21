@@ -32,6 +32,19 @@ MonoBehaviour:
     dictation: 
   entities:
   - witConfiguration: {fileID: 11400000}
+    id: 851800282680246
+    name: ability
+    lookups:
+    - free-text
+    - keywords
+    roles:
+    - id: 458880269563571
+      name: ability
+    keywords:
+    - keyword: slowdown
+      synonyms:
+      - slowdown
+  - witConfiguration: {fileID: 11400000}
     id: 938900403739794
     name: direction
     lookups:
@@ -61,11 +74,36 @@ MonoBehaviour:
     - id: 800229447900360
       name: print
     keywords: []
+  - witConfiguration: {fileID: 11400000}
+    id: 634838644950341
+    name: test
+    lookups:
+    - free-text
+    - keywords
+    roles:
+    - id: 5640859119337524
+      name: test
+    keywords:
+    - keyword: test
+      synonyms:
+      - test
   intents:
   - witConfiguration: {fileID: 11400000}
     id: 504430605035511
     name: go_down
-    entities: []
+    entities:
+    - witConfiguration: {fileID: 11400000}
+      id: 458880269563571
+      name: ability:ability
+      lookups: []
+      roles: []
+      keywords: []
+    - witConfiguration: {fileID: 11400000}
+      id: 5640859119337524
+      name: test:test
+      lookups: []
+      roles: []
+      keywords: []
   - witConfiguration: {fileID: 11400000}
     id: 828222848320504
     name: print_string
@@ -73,6 +111,16 @@ MonoBehaviour:
   - witConfiguration: {fileID: 11400000}
     id: 457514023156082
     name: test_test
+    entities:
+    - witConfiguration: {fileID: 11400000}
+      id: 5640859119337524
+      name: test:test
+      lookups: []
+      roles: []
+      keywords: []
+  - witConfiguration: {fileID: 11400000}
+    id: 841573460593425
+    name: use_ability
     entities: []
   traits: []
   isDemoOnly: 0
