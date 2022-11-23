@@ -6,6 +6,7 @@ public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] AudioClip music;
     [SerializeField] bool loadFromFiles = false;
+    [SerializeField] string fileName = "name";
     AudioSource audioSource;
     MusicProcessor musicProcessor = new MusicProcessor(resolutionPerSec:6, volumeThreshHold:0.25f);
     State state;
@@ -18,7 +19,7 @@ public class MusicPlayer : MonoBehaviour
         if (loadFromFiles)
         {
             MapEditor me = new MapEditor();
-            state = new State(me.loadMap("name"));
+            state = new State(me.loadMap(fileName));
             audioSource.clip = me.music;
         }
         else

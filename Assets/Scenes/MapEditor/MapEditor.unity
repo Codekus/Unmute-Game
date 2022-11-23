@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d36dde58bfabf4d8fbb724b86638d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 0
+  mode: 1
   songName: badapple
   mapName: name
   resolutionPerSec: 4
