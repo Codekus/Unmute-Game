@@ -1,15 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MusicProcessor : MonoBehaviour
 {
 
     float[] audioBuffer;
-    int[] spawnTabel;
-    int[] usedTable;
-    int currentState = 0;
+    Entry[] spawnTable;
+    public Entry[] cloneSpawnTable() {
+        return (Entry[]) spawnTable.Clone();
+    }
 
     float volumeThreshHold;
     int bufferSize;
@@ -50,37 +52,23 @@ public class MusicProcessor : MonoBehaviour
                 }
             }
 
-            spawnTabel = new int[c1];
+            spawnTable = new Entry[c1];
             int c2 = 0;
             for (int i = 1; i < volumeValues.Length-1; i++) {
                 if (volumeValues[i] != 0) {
-                    spawnTabel[c2] = i*bufferSize;
+                    spawnTable[c2] = new Entry();
+                    spawnTable[c2].sample = i*bufferSize;
+                    //event type
+                    spawnTable[c2].type = 1;
                     c2++;
                 }
             }
-
-            reset();
         }
     }
-
 
     public MusicProcessor(int resolutionPerSec = 4, float volumeThreshHold = 0.25f, int samplingRate = 44100) {
         bufferSize = samplingRate / resolutionPerSec;
         this.volumeThreshHold = volumeThreshHold;
     }
 
-    public void reset()
-    {
-        usedTable = (int[]) spawnTabel.Clone();
-        currentState = 0;
-    }
-
-    public bool getInformation(int sample) {
-        //print(usedTable[currentState]+" "+sample);
-        if (usedTable[currentState] < (int)(sample)) {
-            currentState++;
-            return true;
-        }
-        return false;
-    }
 }

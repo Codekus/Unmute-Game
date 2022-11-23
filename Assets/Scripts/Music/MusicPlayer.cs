@@ -5,25 +5,33 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] AudioClip music;
+    [SerializeField] bool loadFromFiles = false;
     AudioSource audioSource;
     MusicProcessor musicProcessor = new MusicProcessor(resolutionPerSec:6, volumeThreshHold:0.25f);
-    
+    State state;
     // Start is called before the first frame update
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.clip = music;
-
         audioSource.volume = 1f;
 
-        musicProcessor.AudioClip  = music;
-
+        if (loadFromFiles)
+        {
+            MapEditor me = new MapEditor();
+            state = new State(me.loadMap("name"));
+            audioSource.clip = me.music;
+        }
+        else
+        {
+            musicProcessor.AudioClip = music;
+            state = new State(musicProcessor.cloneSpawnTable());
+            audioSource.clip = music;
+        }
         audioSource.Play();
     }
 
     public bool getInformation() {
-        return musicProcessor.getInformation(audioSource.timeSamples);
+        return state.getInformation(audioSource.timeSamples);
     }
-
 
 }

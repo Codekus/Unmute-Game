@@ -1883,6 +1883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 5234a2f5abc308a4caa97b043fb250af, type: 3}
+  loadFromFiles: 1
 --- !u!4 &1955919455
 Transform:
   m_ObjectHideFlags: 0
