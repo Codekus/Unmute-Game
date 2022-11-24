@@ -9,6 +9,11 @@ public class AbilityShield : Ability
         return "shield";
     }
 
+    public override bool isReady()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void use()
     {
         print("shield used");

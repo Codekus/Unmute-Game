@@ -7,4 +7,6 @@ public abstract class Ability : MonoBehaviour
 {
     public abstract void use();
     public abstract string getName();
+
+    public abstract bool isReady();
 }

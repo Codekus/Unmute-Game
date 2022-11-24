@@ -10,6 +10,11 @@ public class AbilityLazer : Ability
         return "lazer";
     }
 
+    public override bool isReady()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void use()
     {
         print("lazer used");
