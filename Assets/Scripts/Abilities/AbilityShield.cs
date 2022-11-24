@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AbilityShield : Ability
 {
+    private bool isRdy;
+    private float timer = 0;
+    
     public override string getName()
     {
         return "shield";
@@ -16,7 +19,9 @@ public class AbilityShield : Ability
 
     public override void use()
     {
+        if (!isRdy) return;
         print("shield used");
+        isRdy = false;
     }
 
     // Start is called before the first frame update

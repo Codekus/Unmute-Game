@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class AbilityLazer : Ability
 {
+    private bool isRdy;
+    private float timer = 0;
 
     public override string getName()
     {
+        
         return "lazer";
     }
 
@@ -17,7 +20,9 @@ public class AbilityLazer : Ability
 
     public override void use()
     {
+        if (!isRdy) return;
         print("lazer used");
+        isRdy = false;
     }
 
     // Start is called before the first frame update
