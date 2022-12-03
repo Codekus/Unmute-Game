@@ -12,7 +12,7 @@ public class BodyCollision : MonoBehaviour
     private float currentHealth;
     [SerializeField] private Healthbar _healthbar;
 
-    void Start()
+    void Start() 
     {
         currentHealth = _maxHealth;
         

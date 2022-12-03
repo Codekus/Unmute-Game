@@ -7,9 +7,9 @@ public class VoiceRecognition : MonoBehaviour
 {
     [SerializeReference] List<Ability> keyWordEvents = new List<Ability>();
     
-    //das hier ist warscheinlich überflüssig sorgt aber fürs erst für keine doppel aufrufe 
-    //da KeyWord recognition auf "fertigen" und "nicht fertigen" Phrasen gleichzeitig läuft gibt es mehrfach aufrufe sorgt jedoch für bessere Response time
-    //durch coolDown der fähigkeiten überflüssig
+    //das hier ist warscheinlich ï¿½berflï¿½ssig sorgt aber fï¿½rs erst fï¿½r keine doppel aufrufe 
+    //da KeyWord recognition auf "fertigen" und "nicht fertigen" Phrasen gleichzeitig lï¿½uft gibt es mehrfach aufrufe sorgt jedoch fï¿½r bessere Response time
+    //durch coolDown der fï¿½higkeiten ï¿½berflï¿½ssig
     float timer = 0;
     float onKeyWordLastUsed = 0;
     float onKeyWordCoolDown = 0.35f;
@@ -73,7 +73,7 @@ public class VoiceRecognition : MonoBehaviour
         timer += Time.deltaTime;
 
         int micPosition = Microphone.GetPosition(null);
-        //schneides maximal 127 sampel hinten weg durch % operator auf endedes mic buffers ist wrap around möglich hab ich aber keine lust zu schreiben
+        //schneides maximal 127 sampel hinten weg durch % operator auf endedes mic buffers ist wrap around mï¿½glich hab ich aber keine lust zu schreiben
         if (micPosition < micLastPosition) {
             micLastPosition = micPosition;
         }

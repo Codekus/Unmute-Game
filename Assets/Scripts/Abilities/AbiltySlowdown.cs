@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AbiltySlowdown : Ability
 {
     private bool isRdy;
     private float timer = 0;
+    [SerializeField] private Image _timerSprite;
     public override string getName()
     {
         return "slowdown";
@@ -28,7 +30,7 @@ public class AbiltySlowdown : Ability
     // Start is called before the first frame update
     void Start()
     {
-        
+        _timerSprite.fillAmount = 0;
     }
 
     // Update is called once per frame
@@ -37,12 +39,14 @@ public class AbiltySlowdown : Ability
         if (isRdy == false)
         {
             timer += Time.deltaTime * (1 / Time.timeScale);
+            _timerSprite.fillAmount = 1 - (timer / 15);
         }
         if (timer > 15)
         {
             isRdy = true;
             timer = 0;
-            print("ready");
+            _timerSprite.fillAmount = timer;
+            //print("ready");
         }
     }
 }
