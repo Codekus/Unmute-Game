@@ -15,9 +15,11 @@ public class VoiceRecognition : MonoBehaviour
     float onKeyWordCoolDown = 0.35f;
     public void onKeyWord(int keyWord)
     {
+        
         if (keyWord == -1 || keyWord > keyWordEvents.Count) { return; }
 
-        if (timer - onKeyWordLastUsed > onKeyWordCoolDown) {
+        if (timer - onKeyWordLastUsed > onKeyWordCoolDown)
+        {
             keyWordEvents[keyWord].use();
             onKeyWordLastUsed = timer;
         }
@@ -40,11 +42,11 @@ public class VoiceRecognition : MonoBehaviour
 
     void Start()
     {
-
+        print(Microphone.devices[0]);
         if (device == null) device = Microphone.devices[0];
         micLastPosition = Microphone.GetPosition(device);
         audioClip = Microphone.Start(device, true, 999, sampleRate);
-
+        print("MIC LAST POSITION IS: " + micLastPosition);
         Model model = new Model(modelPath);
         //KeyWords in JSON format
         keyWords = "[";
@@ -73,6 +75,7 @@ public class VoiceRecognition : MonoBehaviour
         timer += Time.deltaTime;
 
         int micPosition = Microphone.GetPosition(null);
+        
         //schneides maximal 127 sampel hinten weg durch % operator auf endedes mic buffers ist wrap around m�glich hab ich aber keine lust zu schreiben
         if (micPosition < micLastPosition) {
             micLastPosition = micPosition;
@@ -82,7 +85,7 @@ public class VoiceRecognition : MonoBehaviour
         {
             return;
         }
-
+        
         int samplePos = micLastPosition + (bufferSize);
         audioClip.GetData(buffer, samplePos);
 
@@ -109,12 +112,14 @@ public class VoiceRecognition : MonoBehaviour
     }
 
     public int recognizeKeyWord(string result) {
+        
         for (int i = 0; i < keyWordEvents.Count; i++) {
             if (result.ToLower().Contains(keyWordEvents[i].getName().ToLower())) {
                 onKeyWord(i);
                 return i;
             }
         }
+        
         return -1;
     }
 

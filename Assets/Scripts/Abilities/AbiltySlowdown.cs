@@ -23,6 +23,7 @@ public class AbiltySlowdown : Ability
         if (!isRdy) return;
         Time.timeScale = 0.5f;
         print("slow");
+        
         isRdy = false;
         
     }
@@ -30,6 +31,7 @@ public class AbiltySlowdown : Ability
     // Start is called before the first frame update
     void Start()
     {
+        isRdy = true;
         _timerSprite.fillAmount = 0;
     }
 
@@ -46,7 +48,6 @@ public class AbiltySlowdown : Ability
             isRdy = true;
             timer = 0;
             _timerSprite.fillAmount = timer;
-            //print("ready");
         }
     }
 }

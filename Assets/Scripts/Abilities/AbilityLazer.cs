@@ -13,7 +13,7 @@ public class AbilityLazer : Ability
     public override string getName()
     {
         
-        return "lazer";
+        return "laser";
     }
 
     public override bool isReady()
@@ -25,19 +25,30 @@ public class AbilityLazer : Ability
     {
         if (!isRdy) return;
         print("lazer used");
-        _timerSprite.fillAmount = 1;
+        
         isRdy = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        isRdy = true;
         _timerSprite.fillAmount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //_timerSprite.fillAmount = 1;
+        if (isRdy == false)
+        {
+            timer += Time.deltaTime * (1 / Time.timeScale);
+            _timerSprite.fillAmount = 1 - (timer / 15);
+        }
+        if (timer > 10)
+        {
+            isRdy = true;
+            timer = 0;
+            _timerSprite.fillAmount = timer;
+        }
     }
 }

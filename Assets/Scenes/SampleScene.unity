@@ -2115,6 +2115,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482522823}
   m_CullTransparentMesh: 0
+--- !u!114 &1584021567 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4361843601531865526, guid: 813fa57b88b82de458c406a099694eda, type: 3}
+  m_PrefabInstance: {fileID: 468173959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1586441120 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8553364197529364881, guid: 885ecae56b16f13428a67de5ae482a72, type: 3}
@@ -2296,7 +2307,7 @@ MonoBehaviour:
   - {fileID: 1675719319}
   - {fileID: 1675719318}
   - {fileID: 1675719320}
-  bufferSize: 128
+  bufferSize: 512
   sampleRate: 22050
   modelPath: Assets\Vosk\LangModels\vosk-model-en-us-0.22-lgraph
 --- !u!4 &1675719317
@@ -2326,6 +2337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bd72acc4b6586409d0e64d872a3534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timerSprite: {fileID: 1584021567}
 --- !u!114 &1675719319
 MonoBehaviour:
   m_ObjectHideFlags: 0
