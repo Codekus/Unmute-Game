@@ -218,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &186793540
 Transform:
   m_ObjectHideFlags: 0
@@ -2345,11 +2345,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675719315}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18a7caaee9bee5f4884c1bb3f140cff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rendo: {fileID: 0}
   _timerSprite: {fileID: 256591340}
 --- !u!114 &1675719320
 MonoBehaviour:
@@ -3218,7 +3219,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861561420}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd0abb3b710e0ea49bc7f3676ab4b606, type: 3}
   m_Name: 
@@ -3238,6 +3239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a7caaee9bee5f4884c1bb3f140cff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rendo: {fileID: 188315682086371828}
   _timerSprite: {fileID: 0}
 --- !u!120 &188315682086371828
 LineRenderer:

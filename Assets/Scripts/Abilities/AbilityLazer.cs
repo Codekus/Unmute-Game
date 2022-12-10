@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,9 +8,10 @@ public class AbilityLazer : Ability
 {
     
     private bool isRdy;
-    private float timer = 0;
+    private float cooldownTimer = 0;
+    private float beamTimer = 0;
 
-    private LineRenderer rendo;
+    [SerializeField] LineRenderer rendo;
 
     [SerializeField] private Image _timerSprite;
     public override string getName()
@@ -27,7 +29,7 @@ public class AbilityLazer : Ability
     {
         if (!isRdy) return;
         print("lazer used");
-        beam(transform.position, transform.forward, 5f);
+        //beam(gameObject.transform.position, gameObject.transform.forward, 5f);
         rendo.enabled = true;
         
         
@@ -48,15 +50,27 @@ public class AbilityLazer : Ability
     {
         if (isRdy == false)
         {
-            timer += Time.deltaTime * (1 / Time.timeScale);
-            _timerSprite.fillAmount = 1 - (timer / 15);
+            cooldownTimer += Time.deltaTime * (1 / Time.timeScale);
+            _timerSprite.fillAmount = 1 - (cooldownTimer / 15);
         }
-        if (timer > 10)
+        if (cooldownTimer > 10)
         {
             isRdy = true;
-            timer = 0;
-            _timerSprite.fillAmount = timer;
+            cooldownTimer = 0;
+            _timerSprite.fillAmount = cooldownTimer;
         }
+
+        if (rendo.enabled == true)
+        {
+            beamTimer += Time.deltaTime * (1 / Time.timeScale);
+        }
+        if (beamTimer > 5)
+        {
+            rendo.enabled = false;
+            beamTimer = 0;
+            
+        }
+        beam(gameObject.transform.position, gameObject.transform.forward, 5f);
     }
 
     void beam(Vector3 targetPos, Vector3 direction, float length)
