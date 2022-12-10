@@ -500,17 +500,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4361843601531865521, guid: 813fa57b88b82de458c406a099694eda, type: 3}
   m_PrefabInstance: {fileID: 4361843601686482010}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &256591340 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4361843601531865526, guid: 813fa57b88b82de458c406a099694eda, type: 3}
-  m_PrefabInstance: {fileID: 4361843601686482010}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &299969108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,7 +2270,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1675719317}
   - component: {fileID: 1675719316}
-  - component: {fileID: 1675719319}
   - component: {fileID: 1675719318}
   - component: {fileID: 1675719320}
   m_Layer: 0
@@ -2304,7 +2292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyWordEvents:
-  - {fileID: 1675719319}
+  - {fileID: 188315682086371827}
   - {fileID: 1675719318}
   - {fileID: 1675719320}
   bufferSize: 512
@@ -2338,20 +2326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerSprite: {fileID: 1584021567}
---- !u!114 &1675719319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675719315}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18a7caaee9bee5f4884c1bb3f140cff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rendo: {fileID: 0}
-  _timerSprite: {fileID: 256591340}
 --- !u!114 &1675719320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,7 +3214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendo: {fileID: 188315682086371828}
-  _timerSprite: {fileID: 0}
+  _timerSprite: {fileID: 1584021567}
 --- !u!120 &188315682086371828
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -3261,7 +3235,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8b121481a37d7bd40a103176d65df1ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3292,8 +3266,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0055865925
-        value: 0.018867582
+        time: 0
+        value: 0.1526732
         inSlope: 0
         outSlope: 0
         tangentMode: 0
