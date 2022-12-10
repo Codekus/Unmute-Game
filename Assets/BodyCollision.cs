@@ -25,7 +25,11 @@ public class BodyCollision : MonoBehaviour
         if (other.gameObject.tag.Equals("Enemy"))
         {
             currentHealth -= 1f;
-            _healthbar.updateHealthbar(currentHealth, _maxHealth); 
+            _healthbar.updateHealthbar(currentHealth, _maxHealth);
+            if (currentHealth <= 0)
+            {
+                _healthbar.onDeath();
+            }
             print(currentHealth);
         }
     }
