@@ -15,7 +15,7 @@ public class AbilityShield : Ability
 
     public override bool isReady()
     {
-        throw new System.NotImplementedException();
+        return isRdy;
     }
 
     public override void use()
@@ -39,7 +39,7 @@ public class AbilityShield : Ability
         if (isRdy == false)
         {
             timer += Time.deltaTime * (1 / Time.timeScale);
-            _timerSprite.fillAmount = 1 - (timer / 15);
+            _timerSprite.fillAmount = 1 - (timer / 7);
         }
         if (timer > 7)
         {

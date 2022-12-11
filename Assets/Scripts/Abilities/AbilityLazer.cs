@@ -51,7 +51,7 @@ public class AbilityLazer : Ability
         if (isRdy == false)
         {
             cooldownTimer += Time.deltaTime * (1 / Time.timeScale);
-            _timerSprite.fillAmount = 1 - (cooldownTimer / 15);
+            _timerSprite.fillAmount = 1 - (cooldownTimer / 10);
         }
         if (cooldownTimer > 10)
         {
