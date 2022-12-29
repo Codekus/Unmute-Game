@@ -7,6 +7,7 @@ public class AbiltySlowdown : Ability
 {
     private bool isRdy;
     private float timer = 0;
+    public float timeScale = 0.7f;
     [SerializeField] private Image _timerSprite;
     public override string getName()
     {
@@ -21,11 +22,16 @@ public class AbiltySlowdown : Ability
     public override void use()
     {
         if (!isRdy) return;
-        Time.timeScale = 0.5f;
+        Time.timeScale = timeScale;
         print("slow");
         
         isRdy = false;
         
+    }
+
+    public void reduceTimeScale()
+    {
+        timeScale -= 0.2f;
     }
 
     // Start is called before the first frame update

@@ -8,7 +8,7 @@ public class BodyCollision : MonoBehaviour
 
     public Transform head;
     public Transform feet;
-    [SerializeField] private float _maxHealth = 3f;
+    [SerializeField] private float _maxHealth = 30000f;
     private float currentHealth;
     [SerializeField] private Healthbar _healthbar;
 
