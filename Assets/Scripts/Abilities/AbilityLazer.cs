@@ -11,10 +11,26 @@ public class AbilityLazer : Ability
     private float cooldownTimer = 0;
     private float maxCooldown = 10f;
     private float beamTimer = 0;
+    private int maxLevel = 2;
+    private int currentLevel = 0;
 
     [SerializeField] LineRenderer rendo;
 
     [SerializeField] private Image _timerSprite;
+
+    public int getMaxlvl()
+    {
+        return maxLevel;
+    }
+
+    public int getCurrentLvl()
+    {
+        return currentLevel;
+    }
+    public void lvlUp()
+    {
+        currentLevel++;
+    }
     public override string getName()
     {
         

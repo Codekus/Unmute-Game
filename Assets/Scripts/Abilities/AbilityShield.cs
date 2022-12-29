@@ -7,10 +7,24 @@ public class AbilityShield : Ability
     private bool isRdy;
     private float timer = 0;
     [SerializeField] private Image _timerSprite;
+    private int maxLevel = 2;
+    private int currentLevel = 0;
     
     public override string getName()
     {
         return "shield";
+    }
+    public int getMaxlvl()
+    {
+        return maxLevel;
+    }
+    public int getCurrentLvl()
+    {
+        return currentLevel;
+    }
+    public void lvlUp()
+    {
+        currentLevel++;
     }
 
     public override bool isReady()

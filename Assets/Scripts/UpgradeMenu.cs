@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeMenu : MonoBehaviour
 {
@@ -18,33 +20,61 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private GameObject vosk;
     
     [SerializeField] private Canvas menu;
+
+    [SerializeField] private GameObject laserLvl;
+    [SerializeField] private GameObject shieldLvl;
+    [SerializeField] private GameObject slowdownLvl;
     void Start()
     {
         abilityLazer = vosk.GetComponent<AbilityLazer>();
         abilityShield = vosk.GetComponent<AbilityShield>();
         abiltySlowdown = vosk.GetComponent<AbiltySlowdown>();
+        SetLvlText();
+    }
+
+    private void SetLvlText()
+    {
+        laserLvl.GetComponent<TextMeshProUGUI>().SetText(abilityLazer.getCurrentLvl() + " / " + abilityLazer.getMaxlvl());
+        shieldLvl.GetComponent<TextMeshProUGUI>().SetText(abilityShield.getCurrentLvl() + " / " + abilityShield.getMaxlvl());
+        slowdownLvl.GetComponent<TextMeshProUGUI>().SetText(abiltySlowdown.getCurrentLvl() + " / " + abiltySlowdown.getMaxlvl());
     }
 
     // Update is called once per frame
 
     public void UpgradeLaser()
     {
-        print("XXXXXXXXXXXXXXXXXXXX");
+        print(abilityLazer.getCurrentLvl() + " / " + abilityLazer.getMaxlvl());
+        if (abilityLazer.getCurrentLvl() == abilityLazer.getMaxlvl())
+        {
+            return;
+        }
+        abilityLazer.lvlUp();
+        SetLvlText();
         abilityLazer.setMaxCooldown(abilityLazer.getMaxCooldown() - 2);
-        menu.enabled = false;
+  //      menu.enabled = false;
 
     }
     
     public void UpgradeShield()
     {
-        print("YYYYYYYYYYYYYYYYYYYYYYYYYYY");
-        menu.enabled = false;
+        if (abilityShield.getCurrentLvl() == abilityShield.getMaxlvl())
+        {
+            return;
+        }
+        abilityShield.lvlUp();
+        SetLvlText();
+ //       menu.enabled = false;
     }
     
     public void UpgradeSlowdown()
     {
-        print("HEYHEYHEY");
+        if (abiltySlowdown.getCurrentLvl() == abiltySlowdown.getMaxlvl())
+        {
+            return;
+        }
+        abiltySlowdown.lvlUp();
+        SetLvlText();
         abiltySlowdown.reduceTimeScale();
-        menu.enabled = false;
+//        menu.enabled = false;
     }
 }

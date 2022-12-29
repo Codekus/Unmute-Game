@@ -9,4 +9,6 @@ public abstract class Ability : MonoBehaviour
     public abstract string getName();
 
     public abstract bool isReady();
+
+    
 }
