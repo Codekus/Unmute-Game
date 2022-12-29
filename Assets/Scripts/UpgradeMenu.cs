@@ -29,6 +29,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void UpgradeLaser()
     {
+        print("XXXXXXXXXXXXXXXXXXXX");
         abilityLazer.setMaxCooldown(abilityLazer.getMaxCooldown() - 2);
         menu.enabled = false;
 
@@ -36,6 +37,7 @@ public class UpgradeMenu : MonoBehaviour
     
     public void UpgradeShield()
     {
+        print("YYYYYYYYYYYYYYYYYYYYYYYYYYY");
         menu.enabled = false;
     }
     
