@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,15 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public UnityEvent onLongClick;
 
     [SerializeField] private Image fillImage;
+    public GameObject ParticlePrefab;
+
+    public AudioClip clip;
+    public AudioSource source;
+
+    public void Start()
+    {
+        
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -42,6 +52,8 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
                 if (onLongClick != null)
                 {
                     onLongClick.Invoke();
+                    SpawnParticle();
+                    source.PlayOneShot(clip);
                 }
 
                 Reset();
@@ -56,5 +68,14 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         pointerDown = false;
         pointerDownTimer = 0;
         fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
+    }
+    void SpawnParticle() {
+        // Create an instance of the particle system prefab at the position (0, 0, 0)
+        // with a rotation of (0, 0, 0)
+        
+        GameObject particle = Instantiate(ParticlePrefab, transform.position, Quaternion.identity);
+
+        // You can also set the position and rotation of the particle system when you spawn it
+        // For example, to spawn the particle system at (1, 2, 3) with a rotation of (45, 0, 0)
     }
 }

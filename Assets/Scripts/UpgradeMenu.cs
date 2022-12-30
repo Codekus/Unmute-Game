@@ -24,6 +24,12 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private GameObject laserLvl;
     [SerializeField] private GameObject shieldLvl;
     [SerializeField] private GameObject slowdownLvl;
+    
+    
+    public Image laserImg;
+    public Image shieldImg;
+    public Image slowdownImg;
+    
     void Start()
     {
         abilityLazer = vosk.GetComponent<AbilityLazer>();
@@ -77,4 +83,11 @@ public class UpgradeMenu : MonoBehaviour
         abiltySlowdown.reduceTimeScale();
 //        menu.enabled = false;
     }
+
+    public void Continue()
+    {
+        menu.enabled = false;
+    }
+    
+    
 }

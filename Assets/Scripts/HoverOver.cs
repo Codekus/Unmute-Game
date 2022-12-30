@@ -16,4 +16,5 @@ public class HoverOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         hoverPanal.SetActive(false);
     }
+    
 }
