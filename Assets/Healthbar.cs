@@ -10,6 +10,7 @@ public class Healthbar : MonoBehaviour
     [SerializeField] private Image _healthbarSprite;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Spawner _spawner;
+    
 
     public void Start()
     {
@@ -31,6 +32,11 @@ public class Healthbar : MonoBehaviour
         {
             GameObject.Destroy(enemy);
         }
+    }
+
+    public void Heal()
+    {
+        
     }
     
     

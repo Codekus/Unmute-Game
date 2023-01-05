@@ -24,6 +24,8 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private GameObject laserLvl;
     [SerializeField] private GameObject shieldLvl;
     [SerializeField] private GameObject slowdownLvl;
+    [SerializeField] private GameObject playerHitBox;
+    private BodyCollision bodyCollision; 
     
     
     public Image laserImg;
@@ -35,6 +37,7 @@ public class UpgradeMenu : MonoBehaviour
         abilityLazer = vosk.GetComponent<AbilityLazer>();
         abilityShield = vosk.GetComponent<AbilityShield>();
         abiltySlowdown = vosk.GetComponent<AbiltySlowdown>();
+        bodyCollision = playerHitBox.GetComponent<BodyCollision>();
         SetLvlText();
     }
 
@@ -80,7 +83,7 @@ public class UpgradeMenu : MonoBehaviour
         }
         abiltySlowdown.lvlUp();
         SetLvlText();
-        abiltySlowdown.reduceTimeScale();
+        abiltySlowdown.increaseDuration();
 //        menu.enabled = false;
     }
 
@@ -88,6 +91,12 @@ public class UpgradeMenu : MonoBehaviour
     {
         menu.enabled = false;
     }
+
+    public void Heal()
+    {
+        bodyCollision.Heal();
+    }
+    
     
     
 }
