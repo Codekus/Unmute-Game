@@ -7,10 +7,24 @@ public class AbilityShield : Ability
     private bool isRdy;
     private float timer = 0;
     [SerializeField] private Image _timerSprite;
+    private int maxLevel = 2;
+    private int currentLevel = 0;
     
     public override string getName()
     {
         return "shield";
+    }
+    public int getMaxlvl()
+    {
+        return maxLevel;
+    }
+    public int getCurrentLvl()
+    {
+        return currentLevel;
+    }
+    public void lvlUp()
+    {
+        currentLevel++;
     }
 
     public override bool isReady()
@@ -22,8 +36,20 @@ public class AbilityShield : Ability
     {
         if (!isRdy) return;
         print("shield used");
+        GameObject shield = GameObject.Find("Shield");
+        shield.GetComponent<MeshRenderer>().enabled = true;
+        shield.GetComponent<BoxCollider>().enabled = true;
+        
+        Invoke("DeactivateShield", 4.0f);
         
         isRdy = false;
+    }
+    
+    void DeactivateShield()
+    {
+        GameObject shield = GameObject.Find("Shield");
+        shield.GetComponent<MeshRenderer>().enabled = false;
+        shield.GetComponent<BoxCollider>().enabled = false;
     }
 
     // Start is called before the first frame update

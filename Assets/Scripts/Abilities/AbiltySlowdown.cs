@@ -7,10 +7,29 @@ public class AbiltySlowdown : Ability
 {
     private bool isRdy;
     private float timer = 0;
+    private float timeScale = 0.3f;
     [SerializeField] private Image _timerSprite;
+    private int maxLevel = 2;
+    private int currentLevel = 0;
+    private bool isActive;
+    private float isActiveTimer;
+    private float slowDuration = 3;
     public override string getName()
     {
         return "slowdown";
+    }
+    public int getMaxlvl()
+    {
+        return maxLevel;
+    }
+    public int getCurrentLvl()
+    {
+        return currentLevel;
+    }
+
+    public void lvlUp()
+    {
+        currentLevel++;
     }
 
     public override bool isReady()
@@ -21,11 +40,16 @@ public class AbiltySlowdown : Ability
     public override void use()
     {
         if (!isRdy) return;
-        Time.timeScale = 0.5f;
+        Time.timeScale = timeScale;
         print("slow");
-        
         isRdy = false;
-        
+        isActiveTimer = 0.0f;
+
+    }
+
+    public void increaseDuration()
+    {
+        slowDuration += 1.0f;
     }
 
     // Start is called before the first frame update
@@ -38,6 +62,11 @@ public class AbiltySlowdown : Ability
     // Update is called once per frame
     void Update()
     {
+        isActiveTimer += Time.deltaTime * (1 / Time.timeScale);
+        if (isActiveTimer > slowDuration)
+        {
+            Time.timeScale = 1;
+        }   
         if (isRdy == false)
         {
             timer += Time.deltaTime * (1 / Time.timeScale);

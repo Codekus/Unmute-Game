@@ -9,17 +9,44 @@ public class AbilityLazer : Ability
     
     private bool isRdy;
     private float cooldownTimer = 0;
+    private float maxCooldown = 10f;
     private float beamTimer = 0;
+    private int maxLevel = 2;
+    private int currentLevel = 0;
 
     [SerializeField] LineRenderer rendo;
     [SerializeField] Transform left;
     [SerializeField] Transform right;
 
     [SerializeField] private Image _timerSprite;
+
+    public int getMaxlvl()
+    {
+        return maxLevel;
+    }
+
+    public int getCurrentLvl()
+    {
+        return currentLevel;
+    }
+    public void lvlUp()
+    {
+        currentLevel++;
+    }
     public override string getName()
     {
         
         return "laser";
+    }
+
+    public void setMaxCooldown(float maxCooldown)
+    {
+        this.maxCooldown = maxCooldown;
+    }
+    
+    public float getMaxCooldown()
+    {
+        return this.maxCooldown;
     }
 
     public override bool isReady()
@@ -29,12 +56,13 @@ public class AbilityLazer : Ability
 
     public override void use()
     {
+        
         if (!isRdy) return;
         print("lazer used");
         //beam(gameObject.transform.position, gameObject.transform.forward, 5f);
         rendo.enabled = true;
         
-        
+        print("lazer after enabled");
         isRdy = false;
     }
 
@@ -53,7 +81,7 @@ public class AbilityLazer : Ability
         if (isRdy == false)
         {
             cooldownTimer += Time.deltaTime * (1 / Time.timeScale);
-            _timerSprite.fillAmount = 1 - (cooldownTimer / 10);
+            _timerSprite.fillAmount = 1 - (cooldownTimer / maxCooldown);
         }
         if (cooldownTimer > 10)
         {

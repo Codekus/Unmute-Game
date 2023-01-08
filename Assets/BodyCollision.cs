@@ -8,7 +8,7 @@ public class BodyCollision : MonoBehaviour
 
     public Transform head;
     public Transform feet;
-    [SerializeField] private float _maxHealth = 3f;
+    private float _maxHealth = 20f;
     private float currentHealth;
     [SerializeField] private Healthbar _healthbar;
 
@@ -21,7 +21,6 @@ public class BodyCollision : MonoBehaviour
     
     public void OnTriggerEnter(Collider other)
     {
-        
         if (other.gameObject.tag.Equals("Enemy"))
         {
             currentHealth -= 1f;
@@ -40,5 +39,16 @@ public class BodyCollision : MonoBehaviour
         gameObject.transform.position = new Vector3(head.position.x, head.position.y-1, head.position.z);
         //gameObject.transform.rotation = new Quaternion(head.rotation.x, head.rotation.y, head.rotation.z, 0);
     }
+
+    public void Heal()
+    {
+        currentHealth += 5f;
+        if (currentHealth > _maxHealth)
+        {
+            currentHealth = _maxHealth;
+        }
+        _healthbar.updateHealthbar(currentHealth, _maxHealth);
+    }
+    
     
 }
