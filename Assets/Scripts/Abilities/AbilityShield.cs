@@ -36,8 +36,20 @@ public class AbilityShield : Ability
     {
         if (!isRdy) return;
         print("shield used");
+        GameObject shield = GameObject.Find("Shield");
+        shield.GetComponent<MeshRenderer>().enabled = true;
+        shield.GetComponent<BoxCollider>().enabled = true;
+        
+        Invoke("DeactivateShield", 4.0f);
         
         isRdy = false;
+    }
+    
+    void DeactivateShield()
+    {
+        GameObject shield = GameObject.Find("Shield");
+        shield.GetComponent<MeshRenderer>().enabled = false;
+        shield.GetComponent<BoxCollider>().enabled = false;
     }
 
     // Start is called before the first frame update
