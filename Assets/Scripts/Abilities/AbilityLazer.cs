@@ -14,7 +14,8 @@ public class AbilityLazer : Ability
     private int maxLevel = 2;
     private int currentLevel = 0;
 
-    [SerializeField] LineRenderer rendo;
+    [SerializeField] LineRenderer rendoRight;
+    [SerializeField] LineRenderer rendoLeft;
     [SerializeField] Transform left;
     [SerializeField] Transform right;
 
@@ -60,8 +61,9 @@ public class AbilityLazer : Ability
         if (!isRdy) return;
         print("lazer used");
         //beam(gameObject.transform.position, gameObject.transform.forward, 5f);
-        rendo.enabled = true;
-        
+        rendoLeft.enabled = true;
+        rendoRight.enabled = true;
+
         print("lazer after enabled");
         isRdy = false;
     }
@@ -72,7 +74,6 @@ public class AbilityLazer : Ability
         isRdy = true;
         _timerSprite.fillAmount = 0;
 
-        rendo = gameObject.GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -90,21 +91,23 @@ public class AbilityLazer : Ability
             _timerSprite.fillAmount = cooldownTimer;
         }
 
-        if (rendo.enabled == true)
+        if (rendoRight.enabled == true && rendoLeft.enabled == true)
         {
             beamTimer += Time.deltaTime * (1 / Time.timeScale);
         }
         if (beamTimer > 5)
         {
-            rendo.enabled = false;
+            rendoRight.enabled = false;
             beamTimer = 0;
-            
+            rendoLeft.enabled = false;
+
         }
-        beam(left.position, left.forward, 5f);
-        beam(right.position, right.forward, 5f);
+
+        beam(left.position, left.forward, 5f, rendoLeft);
+        beam(right.position, right.forward, 5f, rendoRight);
     }
 
-    void beam(Vector3 targetPos, Vector3 direction, float length)
+    void beam(Vector3 targetPos, Vector3 direction, float length, LineRenderer rendo)
     {
         Ray ray = new Ray(targetPos, direction);
         Vector3 endPos = targetPos + (direction * length);
@@ -112,7 +115,7 @@ public class AbilityLazer : Ability
         if (Physics.Raycast(ray, out RaycastHit rayHit, length))
         {
             endPos = rayHit.point;
-            Debug.Log(rayHit.collider.gameObject.name);
+            //Debug.Log(rayHit.collider.gameObject.name);
         }
         
         rendo.SetPosition(0, targetPos);
