@@ -24,7 +24,7 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private GameObject laserLvl;
     [SerializeField] private GameObject shieldLvl;
     [SerializeField] private GameObject slowdownLvl;
-    [SerializeField] private GameObject playerHitBox;
+    [SerializeField] private Healthbar healthBar;
     private BodyCollision bodyCollision; 
     
     
@@ -34,16 +34,15 @@ public class UpgradeMenu : MonoBehaviour
     
     void Start()
     {
-        abilityLazer = vosk.GetComponent<AbilityLazer>();
+    //    abilityLazer = vosk.GetComponent<AbilityLazer>();
         abilityShield = vosk.GetComponent<AbilityShield>();
         abiltySlowdown = vosk.GetComponent<AbiltySlowdown>();
-        bodyCollision = playerHitBox.GetComponent<BodyCollision>();
         SetLvlText();
     }
 
     private void SetLvlText()
     {
-        laserLvl.GetComponent<TextMeshProUGUI>().SetText(abilityLazer.getCurrentLvl() + " / " + abilityLazer.getMaxlvl());
+    //    laserLvl.GetComponent<TextMeshProUGUI>().SetText(abilityLazer.getCurrentLvl() + " / " + abilityLazer.getMaxlvl());
         shieldLvl.GetComponent<TextMeshProUGUI>().SetText(abilityShield.getCurrentLvl() + " / " + abilityShield.getMaxlvl());
         slowdownLvl.GetComponent<TextMeshProUGUI>().SetText(abiltySlowdown.getCurrentLvl() + " / " + abiltySlowdown.getMaxlvl());
     }
@@ -94,7 +93,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void Heal()
     {
-        bodyCollision.Heal();
+        healthBar.Heal();
     }
     
     
