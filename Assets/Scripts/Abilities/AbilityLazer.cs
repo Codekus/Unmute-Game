@@ -12,6 +12,8 @@ public class AbilityLazer : Ability
     private float beamTimer = 0;
 
     [SerializeField] LineRenderer rendo;
+    [SerializeField] Transform left;
+    [SerializeField] Transform right;
 
     [SerializeField] private Image _timerSprite;
     public override string getName()
@@ -70,7 +72,8 @@ public class AbilityLazer : Ability
             beamTimer = 0;
             
         }
-        beam(gameObject.transform.position, gameObject.transform.forward, 5f);
+        beam(left.position, left.forward, 5f);
+        beam(right.position, right.forward, 5f);
     }
 
     void beam(Vector3 targetPos, Vector3 direction, float length)
