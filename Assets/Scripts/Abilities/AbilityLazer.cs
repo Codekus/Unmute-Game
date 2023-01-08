@@ -115,7 +115,7 @@ public class AbilityLazer : Ability
         if (Physics.Raycast(ray, out RaycastHit rayHit, length))
         {
             endPos = rayHit.point;
-            Debug.Log(rayHit.collider.gameObject.name);
+            //Debug.Log(rayHit.collider.gameObject.name);
         }
         
         rendo.SetPosition(0, targetPos);

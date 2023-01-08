@@ -9,6 +9,7 @@ public class AbilityShield : Ability
     [SerializeField] private Image _timerSprite;
     private int maxLevel = 2;
     private int currentLevel = 0;
+    private float duration = 4;
     
     public override string getName()
     {
@@ -25,6 +26,7 @@ public class AbilityShield : Ability
     public void lvlUp()
     {
         currentLevel++;
+        duration += 1;
     }
 
     public override bool isReady()
@@ -40,7 +42,7 @@ public class AbilityShield : Ability
         shield.GetComponent<MeshRenderer>().enabled = true;
         shield.GetComponent<BoxCollider>().enabled = true;
         
-        Invoke("DeactivateShield", 4.0f);
+        Invoke("DeactivateShield", duration);
         
         isRdy = false;
     }
@@ -74,4 +76,6 @@ public class AbilityShield : Ability
             _timerSprite.fillAmount = timer;
         }
     }
+
+    
 }
