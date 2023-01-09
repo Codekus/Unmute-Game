@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
+    Vector3 rotation;
+    Vector3 velocity;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rotation = new Vector3(Random.Range(0, 2), Random.Range(0, 2), Random.Range(0, 2));
+        velocity = new Vector3(0, 0, 1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.position +=  new Vector3(Time.deltaTime,1,1) + transform.forward ;
-        Vector3 velocity = new Vector3(0,0,1);
-        transform.Translate(velocity * Time.deltaTime * -2);
-        //Debug.Log(transform.position);
+        transform.position += velocity * Time.deltaTime * -2;
+        transform.Rotate(rotation, Random.Range(0, 5));
     }
 }

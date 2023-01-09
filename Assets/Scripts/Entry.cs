@@ -8,13 +8,13 @@ public class Entry
     [SerializeField]
     public int sample = 0;
     [SerializeField]
-    public float type = 0;
+    public int type = 0;
     //position 0-9 0=Random 1-9 grid position
     [SerializeField]
     public int position = 0;
 
     public Entry() { }
-    public Entry(int sample, float type, int position)
+    public Entry(int sample, int type, int position)
     {
         this.sample = sample;
         this.type = type;

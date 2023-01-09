@@ -6,9 +6,8 @@ public class Spawner : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] MusicPlayer musicPlayer;
-    public GameObject[] cubes;
+    public GameObject[] types;
     public Transform[] points;
-    private float timer;
     void Start()
     {
 
@@ -17,14 +16,20 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (musicPlayer.getInformation())
+        Entry entry = musicPlayer.getEntry();
+        if (entry != null)
         {
-            GameObject cube = Instantiate(cubes[Random.Range(0, 2)], points[Random.Range(0, 4)]);
+            GameObject cube;
+            if (entry.position != 0)
+            {
+                cube = Instantiate(types[entry.type], points[entry.position - 1]);
+            }
+            else {
+                cube = Instantiate(types[entry.type], points[Random.Range(0, points.Length-1)]);
+            }
             cube.transform.localPosition = Vector3.zero;
             cube.transform.Rotate(transform.forward, 98 * Random.Range(0, 4));
         }
-
-        timer += Time.deltaTime;
     }
 }
  

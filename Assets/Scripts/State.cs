@@ -11,16 +11,15 @@ public class State
         this.table = table;
     }
 
-    public bool getInformation(int sample)
+    public Entry getEntry(int sample)
     {
-        if (currentState >= table.Length) return false;
+        if (currentState >= table.Length) return null;
         //print(usedTable[currentState]+" "+sample);
         if (table[currentState].sample < (int)(sample))
         {
-            currentState++;
-            return true;
+            return table[++currentState];
         }
-        return false;
+        return null;
     }
 
 }

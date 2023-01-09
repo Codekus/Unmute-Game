@@ -100,7 +100,6 @@ public class AbilityLazer : Ability
             rendoRight.enabled = false;
             beamTimer = 0;
             rendoLeft.enabled = false;
-
         }
 
         beam(left.position, left.forward, 5f, rendoLeft);

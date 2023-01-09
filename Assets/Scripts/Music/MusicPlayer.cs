@@ -31,8 +31,8 @@ public class MusicPlayer : MonoBehaviour
         audioSource.Play();
     }
 
-    public bool getInformation() {
-        return state.getInformation(audioSource.timeSamples);
+    public Entry getEntry() {
+        return state.getEntry(audioSource.timeSamples);
     }
 
 }

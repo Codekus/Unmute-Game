@@ -65,7 +65,7 @@ public class MapEditor : MonoBehaviour
         while ((s = sr.ReadLine()) != null) {
             MatchCollection m = Regex.Matches(s, pattern);
             if (m.Count == 3) {
-                arrL.Add(new Entry(int.Parse(m[0].Value),float.Parse(m[1].Value),int.Parse(m[2].Value)));
+                arrL.Add(new Entry(int.Parse(m[0].Value),int.Parse(m[1].Value),int.Parse(m[2].Value)));
             }
         }
 
