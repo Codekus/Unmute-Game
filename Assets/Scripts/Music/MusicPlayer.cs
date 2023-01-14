@@ -31,6 +31,7 @@ public class MusicPlayer : MonoBehaviour
 
     public int playNextSong() {
         GameState.wave++;
+        GameState.timeScale += 0.05f;
         return playSong(GameState.wave);
     }
 
