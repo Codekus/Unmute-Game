@@ -40,7 +40,7 @@ public class AbiltySlowdown : Ability
     public override void use()
     {
         if (!isRdy) return;
-        Time.timeScale = timeScale;
+        Time.timeScale = timeScale * GameState.timeScale;
         print("slow");
         isRdy = false;
         isActiveTimer = 0.0f;
@@ -65,7 +65,7 @@ public class AbiltySlowdown : Ability
         isActiveTimer += Time.deltaTime * (1 / Time.timeScale);
         if (isActiveTimer > slowDuration)
         {
-            Time.timeScale = 1;
+            Time.timeScale = GameState.timeScale;
         }   
         if (isRdy == false)
         {

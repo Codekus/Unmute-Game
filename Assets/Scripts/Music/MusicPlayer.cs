@@ -36,6 +36,8 @@ public class MusicPlayer : MonoBehaviour
 
     public int playSong(int index)
     {
+        index %= songList.Length;
+
         if (index >= songList.Length)
         {
             return -1;

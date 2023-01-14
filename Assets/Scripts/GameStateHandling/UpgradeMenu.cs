@@ -80,7 +80,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void Continue()
     {
-        Time.timeScale = 1;
+        Time.timeScale = GameState.timeScale;
         menu.enabled = false;
     }
 
