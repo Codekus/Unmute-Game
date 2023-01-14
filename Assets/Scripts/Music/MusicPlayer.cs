@@ -6,7 +6,7 @@ public class MusicPlayer : MonoBehaviour
 {
     [SerializeField] AudioClip music;
     [SerializeField] bool loadFromFiles = false;
-    [SerializeField] string fileName = "name";
+    [SerializeField] string[] songList;
     AudioSource audioSource;
     MusicProcessor musicProcessor = new MusicProcessor(resolutionPerSec:6, volumeThreshHold:0.25f);
     State state;
@@ -15,11 +15,36 @@ public class MusicPlayer : MonoBehaviour
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.volume = 1f;
+        audioSource.loop = false;
+
+        //this should be called when the main menu is closed
+        playSong(GameState.wave);
+    }
+
+    public bool isPlaying() {
+        return audioSource.isPlaying;
+    }
+
+    public Entry getEntry() {
+        return state.getEntry(audioSource.timeSamples);
+    }
+
+    public int playNextSong() {
+        GameState.wave++;
+        return playSong(GameState.wave);
+    }
+
+    public int playSong(int index)
+    {
+        if (index >= songList.Length)
+        {
+            return -1;
+        }
 
         if (loadFromFiles)
         {
             MapEditor me = new MapEditor();
-            state = new State(me.loadMap(fileName));
+            state = new State(me.loadMap(songList[index]));
             audioSource.clip = me.music;
         }
         else
@@ -29,10 +54,8 @@ public class MusicPlayer : MonoBehaviour
             audioSource.clip = music;
         }
         audioSource.Play();
-    }
 
-    public Entry getEntry() {
-        return state.getEntry(audioSource.timeSamples);
+        return index;
     }
 
 }

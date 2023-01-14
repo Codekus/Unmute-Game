@@ -247,14 +247,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  songName: badapple
-  mapName: name
+  songName: Morning-Routine-Lofi-Study-Music
+  mapName: Morning-Routine-Lofi-Study-Music
   resolutionPerSec: 4
-  volumeThreshHold: 0.25
+  volumeThreshHold: 0.075
   samplingRate: 44100
   music: {fileID: 0}
   spawnTable: []
-  saveAs: name
+  saveAs: Morning-Routine-Lofi-Study-Music
   save: 0
   references:
     version: 2
