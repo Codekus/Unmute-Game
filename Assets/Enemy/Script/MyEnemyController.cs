@@ -19,18 +19,24 @@ public class MyEnemyController : MonoBehaviour
     public float timeBetweenAttacks;
     bool alreadyAttecked;
     public GameObject projectile;
+    private float shootTimer = 0;
    
     
     //States
     public Transform pointA;
     public Transform pointB;
     public float speed = 1f;
+
+    private Vector3 playerPos;
     
     // Start is called before the first frame update
     void Start()
     {
         enemyMesh = GetComponent<NavMeshAgent>();
-       
+        InvokeRepeating("Fire", 0f, 3f);
+        playerPos = new Vector3(0, -1, 0);
+
+
     }
 
     // Update is called once per frame
@@ -42,17 +48,43 @@ public class MyEnemyController : MonoBehaviour
           transform.LookAt(playerObj);
         
 
-        if(!alreadyAttecked)
+        if(shootTimer >= timeBetweenAttacks)
       {
-        Vector3 shotDirection = playerObj.position - transform.position;
-        GameObject projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
-        Rigidbody rb = projectileInstance.GetComponent<Rigidbody>();
-        rb.velocity = shotDirection;
+          shootTimer = 0;
+          /*     transform.position = Vector3.MoveTowards(transform.position, playerPos, 100f * Time.deltaTime);
+               Vector3 direction = (playerObj.position - transform.position).normalized;
+               GameObject bullet = Instantiate(projectile, transform.position, Quaternion.LookRotation(direction));
+               bullet.GetComponent<Transform>().position = Vector3.MoveTowards(transform.position, playerPos, 100f * Time.deltaTime);
+               
+                 Vector3 shotDirection = (playerObj.position - transform.position).normalized;
+                 GameObject projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
+                 Rigidbody rb = projectileInstance.GetComponent<Rigidbody>();
+                 projectileInstance.GetComponent<Rigidbody>().AddForce(shotDirection * 1.25f);
+                 //rb.velocity = shotDirection;
+                 */
+            
+           // rb.transform.Translate(shotDirection * Time.deltaTime);
+            
 
 
-        alreadyAttecked = true;
-        Invoke(nameof(ResetAttack), timeBetweenAttacks);
+      //      alreadyAttecked = true;
+      //      Invoke(nameof(ResetAttack), timeBetweenAttacks);
       }
+        else
+        {
+            shootTimer += Time.deltaTime * (1 / Time.timeScale);
+        }
+    }
+    
+    void Fire() {
+        print("shoot");
+        print(playerPos);
+        Vector3 playerPosition = playerObj.position;
+        playerPosition.y = playerPosition.y + 1;
+        Vector3 direction = (playerPosition - transform.position).normalized;
+        GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody>().AddForce(direction * 300f);
+
     }
     
    
