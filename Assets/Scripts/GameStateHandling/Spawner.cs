@@ -7,7 +7,8 @@ public class Spawner : MonoBehaviour
     /*
      * Start is called before the first frame update
      */
-    [SerializeField] MusicPlayer musicPlayer;
+    [SerializeField] public MusicPlayer musicPlayer;
+    [SerializeField] private UpgradeMenu upgradeMenu;
     public GameObject[] types;
     public Transform[] points;
     void Start()
@@ -42,7 +43,8 @@ public class Spawner : MonoBehaviour
             if (!musicPlayer.isPlaying()) {
                 if (musicPlayer.playNextSong() != -1)
                 {
-                    print("wave finished");
+                    Time.timeScale = 0;
+                    upgradeMenu.enabled = true;
                 }
                 else
                 {

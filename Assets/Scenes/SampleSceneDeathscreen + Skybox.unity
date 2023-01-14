@@ -4606,6 +4606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicPlayer: {fileID: 1955919454}
+  upgradeMenu: {fileID: 8218413205616275936}
   types:
   - {fileID: 7141089764402501378, guid: 12d7a0a119aa8474aaeef5d7cb9d4933, type: 3}
   - {fileID: 7141089764402501378, guid: 12d7a0a119aa8474aaeef5d7cb9d4933, type: 3}
@@ -7299,7 +7300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8218413205616275930
 MonoBehaviour:
   m_ObjectHideFlags: 0
