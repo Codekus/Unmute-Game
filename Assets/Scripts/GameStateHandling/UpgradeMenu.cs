@@ -26,7 +26,7 @@ public class UpgradeMenu : MonoBehaviour
     public Image laserImg;
     public Image shieldImg;
     public Image slowdownImg;
-    
+
     void Start()
     {
         SetLvlText();
