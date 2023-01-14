@@ -42,6 +42,7 @@ public class VoiceRecognition : MonoBehaviour
 
     void Start()
     {
+        Ability a = new AbilityLazer();
         print(Microphone.devices[0]);
         if (device == null) device = Microphone.devices[0];
         micLastPosition = Microphone.GetPosition(device);

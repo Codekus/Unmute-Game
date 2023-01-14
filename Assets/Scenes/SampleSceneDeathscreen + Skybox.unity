@@ -1887,8 +1887,9 @@ GameObject:
   - component: {fileID: 806080391}
   - component: {fileID: 806080393}
   - component: {fileID: 806080392}
+  - component: {fileID: 806080394}
   m_Layer: 0
-  m_Name: AbilityShieldCD
+  m_Name: AbilityShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1953,6 +1954,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806080390}
   m_CullTransparentMesh: 1
+--- !u!114 &806080394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806080390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4bd72acc4b6586409d0e64d872a3534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timerSprite: {fileID: 806080392}
 --- !u!1 &809159778 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1038146256242982, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
@@ -2353,8 +2367,9 @@ GameObject:
   - component: {fileID: 988611660}
   - component: {fileID: 988611662}
   - component: {fileID: 988611661}
+  - component: {fileID: 988611663}
   m_Layer: 0
-  m_Name: AbilityLazerCD
+  m_Name: AbilityLazer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2419,6 +2434,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988611659}
   m_CullTransparentMesh: 1
+--- !u!114 &988611663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988611659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a7caaee9bee5f4884c1bb3f140cff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendoRight: {fileID: 1432024236}
+  rendoLeft: {fileID: 1535948812}
+  left: {fileID: 188315682086385141}
+  right: {fileID: 188315682086371825}
+  _timerSprite: {fileID: 988611661}
 --- !u!1 &1023788169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,9 +2611,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1120213126}
-  - component: {fileID: 1120213129}
-  - component: {fileID: 1120213128}
-  - component: {fileID: 1120213127}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Untagged
@@ -2596,7 +2625,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120213125}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2607,49 +2636,6 @@ Transform:
   m_Father: {fileID: 246275827}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1120213127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120213125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18a7caaee9bee5f4884c1bb3f140cff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rendoRight: {fileID: 1432024236}
-  rendoLeft: {fileID: 1535948812}
-  left: {fileID: 188315682086385141}
-  right: {fileID: 188315682086371825}
-  _timerSprite: {fileID: 988611661}
---- !u!114 &1120213128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120213125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ec0ffa5a8435848b7128918ae9aa14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timerSprite: {fileID: 1463643606}
---- !u!114 &1120213129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120213125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4bd72acc4b6586409d0e64d872a3534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timerSprite: {fileID: 806080392}
 --- !u!1 &1134393961
 GameObject:
   m_ObjectHideFlags: 0
@@ -3916,8 +3902,9 @@ GameObject:
   - component: {fileID: 1463643605}
   - component: {fileID: 1463643607}
   - component: {fileID: 1463643606}
+  - component: {fileID: 1463643608}
   m_Layer: 0
-  m_Name: AbilitySlowCD
+  m_Name: AbilitySlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3982,6 +3969,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463643604}
   m_CullTransparentMesh: 1
+--- !u!114 &1463643608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463643604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ec0ffa5a8435848b7128918ae9aa14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timerSprite: {fileID: 1463643606}
 --- !u!1 &1535948810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4154,9 +4154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyWordEvents:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 988611663}
+  - {fileID: 806080394}
+  - {fileID: 1463643608}
   bufferSize: 512
   sampleRate: 22050
   modelPath: Assets\Vosk\LangModels\vosk-model-en-us-0.22-lgraph
@@ -7413,15 +7413,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d8725bf7ec6164c909a18747610b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vosk: {fileID: 1675719315}
   menu: {fileID: 8218413205616275932}
   laserLvl: {fileID: 673899218}
   shieldLvl: {fileID: 744263768}
   slowdownLvl: {fileID: 1187359623}
   healthBar: {fileID: 1023788174}
-  laserImg: {fileID: 0}
-  shieldImg: {fileID: 0}
-  slowdownImg: {fileID: 0}
+  abilityLazer: {fileID: 988611663}
+  abilityShield: {fileID: 806080394}
+  abiltySlowdown: {fileID: 1463643608}
+  laserImg: {fileID: 988611661}
+  shieldImg: {fileID: 806080392}
+  slowdownImg: {fileID: 1463643606}
 --- !u!212 &8218413205616275937
 SpriteRenderer:
   m_ObjectHideFlags: 0

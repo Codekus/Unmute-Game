@@ -6,18 +6,8 @@ using UnityEngine.UI;
 
 public class UpgradeMenu : MonoBehaviour
 {
-    
-    
-    private AbilityLazer abilityLazer;
-    
-    
-    private AbilityShield abilityShield;
-    
-    
-    private AbiltySlowdown abiltySlowdown;
     // Start is called before the first frame update
 
-    [SerializeField] private GameObject vosk;
     
     [SerializeField] private Canvas menu;
 
@@ -25,6 +15,11 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private GameObject shieldLvl;
     [SerializeField] private GameObject slowdownLvl;
     [SerializeField] private Healthbar healthBar;
+
+    [SerializeField] private AbilityLazer abilityLazer;
+    [SerializeField] private AbilityShield abilityShield;
+    [SerializeField] private AbiltySlowdown abiltySlowdown;
+
     private BodyCollision bodyCollision; 
     
     
@@ -34,9 +29,6 @@ public class UpgradeMenu : MonoBehaviour
     
     void Start()
     {
-        abilityLazer = GameObject.Find("LaserBeamRight").GetComponent<AbilityLazer>();
-        abilityShield = vosk.GetComponent<AbilityShield>();
-        abiltySlowdown = vosk.GetComponent<AbiltySlowdown>();
         SetLvlText();
     }
 
