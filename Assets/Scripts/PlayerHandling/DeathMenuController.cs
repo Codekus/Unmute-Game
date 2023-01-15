@@ -14,8 +14,15 @@ public class DeathMenuController : MonoBehaviour
 
     }
 
-    public void LoadMainMenu()
-    {
+    public void LoadMainMenu(){
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void OpenScene(string sceneName)
+    {
+
+        SceneManager.LoadSceneAsync(sceneName);
+    }
+
+
 }
