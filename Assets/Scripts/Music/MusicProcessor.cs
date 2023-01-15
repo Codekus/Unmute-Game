@@ -58,8 +58,8 @@ public class MusicProcessor : MonoBehaviour
                 if (volumeValues[i] != 0) {
                     spawnTable[c2] = new Entry();
                     spawnTable[c2].sample = i*bufferSize;
-                    //event type
-                    spawnTable[c2].type = 1;
+                    //event type - 999 is random object type
+                    spawnTable[c2].type = 999;
                     c2++;
                 }
             }

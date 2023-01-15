@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
      */
     [SerializeField] public MusicPlayer musicPlayer;
     [SerializeField] private UpgradeMenu upgradeMenu;
+    //This means it is 6 times more likely the first item will be spawned
+    [SerializeField] public int scewTowardsFirstObstacle = 3;
     public GameObject[] types;
     public Transform[] points;
     void Start()
@@ -23,13 +25,25 @@ public class Spawner : MonoBehaviour
         if (entry != null)
         {
             GameObject cube;
-            if (entry.position != 0)
+            int type = 0;
+            if (entry.type == 999)
             {
-                cube = Instantiate(types[entry.type], points[entry.position - 1]);
+                //scews probability towards the first obstacle type
+                type = Random.Range(0, types.Length + types.Length * scewTowardsFirstObstacle);
+                if (type >= types.Length) type = 0;
             }
             else
             {
-                cube = Instantiate(types[entry.type], points[Random.Range(0, points.Length - 1)]);
+                type = entry.type;
+            }
+
+            if (entry.position != 0)
+            {
+                cube = Instantiate(types[type], points[entry.position - 1]);
+            }
+            else
+            {
+                cube = Instantiate(types[type], points[Random.Range(0, points.Length - 1)]);
             }
             cube.transform.localPosition = Vector3.zero;
             cube.transform.Rotate(transform.forward, 98 * Random.Range(0, 4));

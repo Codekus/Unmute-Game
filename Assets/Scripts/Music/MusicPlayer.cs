@@ -21,6 +21,11 @@ public class MusicPlayer : MonoBehaviour
         playSong(GameState.wave);
     }
 
+    private void Update()
+    {
+        audioSource.pitch = Time.timeScale;
+    }
+
     public bool isPlaying() {
         return audioSource.isPlaying;
     }
