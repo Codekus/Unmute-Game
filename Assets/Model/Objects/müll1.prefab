@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3316992658331686828}
   - component: {fileID: 9203870080014859515}
   - component: {fileID: -1439730007547781893}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: -2577548232221058511}
   - component: {fileID: -3857212601033656251}
   - component: {fileID: 7202271454713460447}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,9 +178,9 @@ GameObject:
   - component: {fileID: 1025853438844487933}
   - component: {fileID: 5873130959072032452}
   - component: {fileID: 6624701127140539048}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "m\xFCll1"
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 1913333371769594435}
   - component: {fileID: -946750771999019441}
   - component: {fileID: 8414140065852599530}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: -2484921068739079471}
   - component: {fileID: 4109396432888090641}
   - component: {fileID: 7071182760956848314}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 5666261585234168772}
   - component: {fileID: 4812060306701268125}
   - component: {fileID: 1129496810705857465}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}

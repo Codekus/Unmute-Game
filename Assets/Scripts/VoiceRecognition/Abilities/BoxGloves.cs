@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,5 +43,13 @@ public class BoxGloves : Ability
     public override bool isReady()
     {
         return true;
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 }
