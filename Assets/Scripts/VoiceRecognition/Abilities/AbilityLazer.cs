@@ -112,8 +112,8 @@ public class AbilityLazer : Ability
             boxRight.SetActive(true);
         }
 
-        beam(left.position, left.forward, 5f, rendoLeft);
-        beam(right.position, right.forward, 5f, rendoRight);
+        beam(left.position, left.forward, 10f, rendoLeft);
+        beam(right.position, right.forward, 10f, rendoRight);
     }
 
     void beam(Vector3 targetPos, Vector3 direction, float length, LineRenderer rendo)
@@ -124,7 +124,10 @@ public class AbilityLazer : Ability
         if (Physics.Raycast(ray, out RaycastHit rayHit, length))
         {
             endPos = rayHit.point;
-            Destroy(rayHit.collider.gameObject);
+            if (rayHit.collider.tag == "Enemy")
+            {
+                Destroy(rayHit.collider.gameObject);   
+            }
         }
         
         rendo.SetPosition(0, targetPos);
