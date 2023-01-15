@@ -46,15 +46,7 @@ public class BoxGloves : Ability
         return true;
     }
 
-    /*private void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-        }
-    }*/
-
-    private void OnTriggerEnter(Collision col)
+    private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Enemy"))
         {

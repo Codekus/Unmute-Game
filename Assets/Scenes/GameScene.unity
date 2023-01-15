@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000014584724, g: 0.000014800121, b: 0.000014584724, a: 1}
+  m_IndirectSpecularColor: {r: 0.000014620657, g: 0.000014815162, b: 0.000014620657, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4159,7 +4159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1432024234}
   - component: {fileID: 1432024236}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserBeamRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4516,7 +4516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1535948811}
   - component: {fileID: 1535948812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserBeamLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6129,7 +6129,7 @@ GameObject:
   - component: {fileID: 7450511915602609940}
   - component: {fileID: 7450511915602609942}
   - component: {fileID: 7450511915602609941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BoxRechts
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -6416,7 +6416,7 @@ GameObject:
   - component: {fileID: 3769081622595444770}
   - component: {fileID: 8087213766406855986}
   - component: {fileID: 8087213766406855985}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BoxLinks
   m_TagString: Weapon
   m_Icon: {fileID: 0}

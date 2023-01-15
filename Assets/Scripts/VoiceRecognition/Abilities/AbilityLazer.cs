@@ -132,15 +132,7 @@ public class AbilityLazer : Ability
         rendo.SetPosition(1, endPos);
     }
     
-    /*private void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-        }
-    }*/
-    
-    private void OnTriggerEnter(Collision col)
+    private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Enemy"))
         {
