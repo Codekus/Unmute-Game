@@ -21,6 +21,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameState.gamePaused) return;
         Entry entry = musicPlayer.getEntry();
         if (entry != null)
         {
@@ -57,7 +58,7 @@ public class Spawner : MonoBehaviour
             if (!musicPlayer.isPlaying()) {
                 if (musicPlayer.playNextSong() != -1)
                 {
-                    Time.timeScale = 0;
+                    GameState.gamePaused = true;
                     upgradeMenu.enabled = true;
                 }
                 else

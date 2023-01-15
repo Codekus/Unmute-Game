@@ -73,6 +73,7 @@ public class VoiceRecognition : MonoBehaviour
 
     void Update()
     {
+        if(GameState.gamePaused) return;
         timer += Time.deltaTime;
 
         int micPosition = Microphone.GetPosition(null);
