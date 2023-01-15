@@ -10,12 +10,12 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] Slider slider;
 
     [SerializeField] AudioMixer masterMixer;
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
-        SetVolume(PlayerPrefs.GetFloat("SavedmMasterVolume", 100));
+        SetVolume(PlayerPrefs.GetFloat("SavedmMasterVolume", 50));
     }
 
     public void SetVolume(float _value)
