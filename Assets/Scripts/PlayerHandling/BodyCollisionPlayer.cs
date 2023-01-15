@@ -22,11 +22,12 @@ public class BodyCollisionPlayer : MonoBehaviour
     
     public void OnTriggerEnter(Collider other)
     {
+        
         if (other.gameObject.tag.Equals("Enemy"))
         {
-            print("TRIGGERED");
-            Destroy(other);
-            _healthbar.hit();
+            
+            Destroy(other.gameObject);
+        //    _healthbar.hit();
         }
     }
 }
