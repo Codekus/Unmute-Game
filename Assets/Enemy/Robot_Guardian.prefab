@@ -137,8 +137,7 @@ MonoBehaviour:
   playerObj: {fileID: 0}
   health: 0
   timeBetweenAttacks: 0
-  projectile: {fileID: 0}
+  projectile: {fileID: 1171743015239036250, guid: 648bee7e5cad3e54382956c5a19d4b3a, type: 3}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   speed: 1
-  projectileSpeed: 10

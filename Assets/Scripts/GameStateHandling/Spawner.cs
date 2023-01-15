@@ -24,8 +24,10 @@ public class Spawner : MonoBehaviour
     {
         if(GameState.gamePaused) return;
         Entry entry = musicPlayer.getEntry();
+        
         if (entry != null)
         {
+            if (entry.type == 1000) entry.type = 5;
             GameObject cube;
             int type = 0;
             if (entry.type == 999)
@@ -36,7 +38,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                if (type == 1000) type = 5;
+                
                 type = entry.type;
             }
 
@@ -48,7 +50,7 @@ public class Spawner : MonoBehaviour
             {
                 cube = Instantiate(types[type], points[Random.Range(0, points.Length - 1)]);
             }
-            if (type >= 1000)
+            if (type == 5)
             {
                 MyEnemyController enemieScript = cube.GetComponent<MyEnemyController>();
                 enemieScript.pointA = points[3];

@@ -8,9 +8,9 @@ public class Healthbar : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private Image _healthbarSprite;
-    public Canvas _canvas;
+    [SerializeField] private Canvas _canvas;
     private GameObject _spawner;
-    private float _maxHealth = 20;
+    private float _maxHealth = 20000;
     private float currentHealth;
     
 
@@ -22,6 +22,9 @@ public class Healthbar : MonoBehaviour
         print(_canvas);
         _canvas.enabled = false;
         _spawner = GameObject.Find("Spawner");
+
+        
+        
     }
 
     public void updateHealthbar(float currentHealth, float maxHealth)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,12 +23,12 @@ public class BodyCollisionPlayer : MonoBehaviour
     
     public void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.tag.Equals("Enemy"))
+        print("got hit ");
+        if (other.gameObject.tag.Equals("Enemy") || other.gameObject.tag.Equals("Weapon") )
         {
-            
+            print("hit" + other.gameObject);
             Destroy(other.gameObject);
-        //    _healthbar.hit();
+            _healthbar.hit();
         }
     }
 }

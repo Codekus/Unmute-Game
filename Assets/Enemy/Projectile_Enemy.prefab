@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8997213026651264834}
   - component: {fileID: -2694738157479445954}
-  m_Layer: 0
+  - component: {fileID: -2030058015776255527}
+  - component: {fileID: -7766526809086442490}
+  m_Layer: 7
   m_Name: Projectile_Enemy
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1171743015239036250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8016911550699371138}
@@ -45,6 +47,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb67632f37456640a725cfdd790bc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 5
+--- !u!54 &-2030058015776255527
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171743015239036250}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &-7766526809086442490
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171743015239036250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6133300971320048409
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +90,7 @@ GameObject:
   - component: {fileID: 5542436798077289552}
   - component: {fileID: 8829087995094544504}
   - component: {fileID: 6859630804203652013}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -983,7 +983,7 @@ GameObject:
   - component: {fileID: 401273336}
   m_Layer: 0
   m_Name: PlayerHitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5601,6 +5601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicPlayer: {fileID: 1955919454}
   upgradeMenu: {fileID: 8218413205616275932}
+  playHitBox: {fileID: 401273332}
   scewTowardsFirstObstacle: 3
   types:
   - {fileID: 7141089764402501378, guid: 12d7a0a119aa8474aaeef5d7cb9d4933, type: 3}
@@ -5608,6 +5609,7 @@ MonoBehaviour:
   - {fileID: 131364088799252800, guid: e8bbff41a3ad7dd4c9cceede893e8179, type: 3}
   - {fileID: 1659246922999104630, guid: 2826312065a573d409cf20538cb09073, type: 3}
   - {fileID: 8855408742085537336, guid: 3b8af1666528c00448d4e334cec12025, type: 3}
+  - {fileID: 1262010245510058, guid: d0e2b6bf944e12c439220558bf7de75a, type: 3}
   points:
   - {fileID: 1684327046}
   - {fileID: 941117752}
