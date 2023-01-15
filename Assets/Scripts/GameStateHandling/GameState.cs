@@ -17,7 +17,7 @@ public class GameState
 
     public static void ememieDestoyed() {
         score += multiplyer * 100;
-        multiplyer += 0.01f;
+        multiplyer += 0.05f;
     }
 
 }
