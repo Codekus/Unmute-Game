@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BoxGloves : Ability
@@ -45,7 +46,15 @@ public class BoxGloves : Ability
         return true;
     }
 
-    private void OnCollisionEnter(Collision col)
+    /*private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }*/
+
+    private void OnTriggerEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Enemy"))
         {
