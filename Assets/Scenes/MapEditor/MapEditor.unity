@@ -247,14 +247,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  songName: Morning-Routine-Lofi-Study-Music
-  mapName: Morning-Routine-Lofi-Study-Music
+  songName: barradeen-bedtime-after-a-coffee
+  mapName: barradeen-bedtime-after-a-coffee
   resolutionPerSec: 4
-  volumeThreshHold: 0.075
+  volumeThreshHold: 0.1
   samplingRate: 44100
   music: {fileID: 0}
   spawnTable: []
-  saveAs: Morning-Routine-Lofi-Study-Music
+  saveAs: barradeen-bedtime-after-a-coffee
   save: 0
   references:
     version: 2
