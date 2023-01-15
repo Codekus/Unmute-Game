@@ -6156,6 +6156,7 @@ GameObject:
   - component: {fileID: 1186383457969557548}
   - component: {fileID: 7450511915602609940}
   - component: {fileID: 7450511915602609942}
+  - component: {fileID: 7450511915602609943}
   - component: {fileID: 7450511915602609941}
   m_Layer: 0
   m_Name: BoxRechts
@@ -6443,6 +6444,7 @@ GameObject:
   - component: {fileID: 3502293838799986068}
   - component: {fileID: 3769081622595444770}
   - component: {fileID: 8087213766406855986}
+  - component: {fileID: 8087213766406855987}
   - component: {fileID: 8087213766406855985}
   m_Layer: 0
   m_Name: BoxLinks
@@ -7765,7 +7767,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418016742735659757}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.03192167, y: 0.04206096, z: 0.062718175}
@@ -7786,6 +7788,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &7450511915602609943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418016742735659757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81cd62b857ff234280e10bedd65ba61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7737562895650052888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7956,6 +7970,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &8087213766406855987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2471747003615559559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81cd62b857ff234280e10bedd65ba61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8218413203932956822
 MonoBehaviour:
   m_ObjectHideFlags: 0
