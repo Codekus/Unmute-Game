@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000014584724, g: 0.000014800121, b: 0.000014584724, a: 1}
+  m_IndirectSpecularColor: {r: 0.000014620657, g: 0.000014815162, b: 0.000014620657, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3714,6 +3714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a7caaee9bee5f4884c1bb3f140cff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxLeft: {fileID: 0}
+  boxRight: {fileID: 0}
   rendoRight: {fileID: 0}
   rendoLeft: {fileID: 0}
   left: {fileID: 188315682086385141}
@@ -4629,7 +4631,7 @@ PrefabInstance:
     - target: {fileID: 7220994217518491053, guid: 258d992ea004250479c75b5f27bfee8b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c8dbd03c2e0bda34593e33cdda6c2f6f, type: 2}
+      objectReference: {fileID: 2100000, guid: 7f23acb1fd991df43ab0ebe8f4d273ea, type: 2}
     - target: {fileID: 7220994217518491055, guid: 258d992ea004250479c75b5f27bfee8b, type: 3}
       propertyPath: m_Name
       value: Shield
@@ -4670,6 +4672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicPlayer: {fileID: 1955919454}
+  upgradeMenu: {fileID: 0}
+  scewTowardsFirstObstacle: 3
   types:
   - {fileID: 7141089764402501378, guid: 12d7a0a119aa8474aaeef5d7cb9d4933, type: 3}
   - {fileID: 7141089764402501378, guid: 12d7a0a119aa8474aaeef5d7cb9d4933, type: 3}
@@ -5208,7 +5212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 5234a2f5abc308a4caa97b043fb250af, type: 3}
   loadFromFiles: 1
-  fileName: name
+  songList: []
 --- !u!4 &1955919455
 Transform:
   m_ObjectHideFlags: 0
@@ -7470,12 +7474,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d8725bf7ec6164c909a18747610b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vosk: {fileID: 1675719315}
   menu: {fileID: 8218413205616275932}
   laserLvl: {fileID: 673899218}
   shieldLvl: {fileID: 744263768}
   slowdownLvl: {fileID: 1187359623}
   healthBar: {fileID: 1023788174}
+  abilityLazer: {fileID: 0}
+  abilityShield: {fileID: 0}
+  abiltySlowdown: {fileID: 0}
   laserImg: {fileID: 0}
   shieldImg: {fileID: 0}
   slowdownImg: {fileID: 0}
