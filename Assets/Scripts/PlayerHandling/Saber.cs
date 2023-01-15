@@ -18,8 +18,12 @@ public class Saber : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, 1, layer))
         {
-            if(hit.transform.gameObject.tag.Equals("Enemy")) GameState.ememieDestoyed();
-            Destroy(hit.transform.gameObject);
+            if(hit.transform.gameObject.tag.Equals("Enemy"))
+            {
+                GameState.ememieDestoyed();
+                Destroy(hit.transform.gameObject);
+            }
+            
             /*
             if (Vector3.Angle(transform.position - previousPos, hit.transform.up) > 130)
             {
