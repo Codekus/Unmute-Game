@@ -47,7 +47,7 @@ public class BoxGloves : Ability
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }
