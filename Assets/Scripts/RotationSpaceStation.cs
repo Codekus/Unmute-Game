@@ -7,6 +7,6 @@ public class RotationSpaceStation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Rotate(0f,0f,0.01f);
+        gameObject.transform.Rotate(0f,0f,0.05f);
     }
 }
