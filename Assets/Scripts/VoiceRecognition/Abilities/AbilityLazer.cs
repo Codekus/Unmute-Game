@@ -136,7 +136,7 @@ public class AbilityLazer : Ability
     {
         if (col.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            Destroy(col.gameObject);
         }
     }
 }

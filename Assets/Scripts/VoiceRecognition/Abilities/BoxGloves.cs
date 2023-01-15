@@ -50,7 +50,7 @@ public class BoxGloves : Ability
     {
         if (col.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            Destroy(col.gameObject);
         }
     }
 }
