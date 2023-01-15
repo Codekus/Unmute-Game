@@ -18,9 +18,10 @@ public class BodyCollision : MonoBehaviour
     
     public void OnTriggerEnter(Collider other)
     {
-        print("TRIGGERED");
+        
         if (other.gameObject.tag.Equals("Enemy"))
         {
+            GameState.multiplyer = 1;
             Destroy(other.gameObject);
             _healthbar.hit();
         }

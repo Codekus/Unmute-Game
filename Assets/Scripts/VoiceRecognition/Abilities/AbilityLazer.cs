@@ -61,14 +61,15 @@ public class AbilityLazer : Ability
 
     public override void use()
     {
+        
+        if (!isRdy) return;
+        
         if (boxLeft.activeSelf == true)
         {
             boxLeft.SetActive(false);
             boxRight.SetActive(false);
         }
-        
-        if (!isRdy) return;
-        
+      
         rendoLeft.enabled = true;
         rendoRight.enabled = true;
         
@@ -125,8 +126,12 @@ public class AbilityLazer : Ability
         {
             endPos = rayHit.point;
 
-            GameState.ememieDestoyed();
-            Destroy(rayHit.collider.gameObject);
+            if (rayHit.collider.tag.Equals("Enemy"))
+            {
+                GameState.ememieDestoyed();
+                Destroy(rayHit.collider.gameObject);
+            }
+            
         }
         
         rendo.SetPosition(0, targetPos);
