@@ -14,6 +14,8 @@ public class AbilityLazer : Ability
     private int maxLevel = 2;
     private int currentLevel = 0;
 
+    [SerializeField] GameObject boxLeft;
+    [SerializeField] GameObject boxRight;
     [SerializeField] LineRenderer rendoRight;
     [SerializeField] LineRenderer rendoLeft;
     [SerializeField] Transform left;
@@ -57,14 +59,19 @@ public class AbilityLazer : Ability
 
     public override void use()
     {
+        if (boxLeft.activeSelf == true)
+        {
+            boxLeft.SetActive(false);
+            boxRight.SetActive(false);
+        }
         
         if (!isRdy) return;
-        print("lazer used");
+        //print("lazer used");
         //beam(gameObject.transform.position, gameObject.transform.forward, 5f);
         rendoLeft.enabled = true;
         rendoRight.enabled = true;
 
-        print("lazer after enabled");
+        //print("lazer after enabled");
         isRdy = false;
     }
 
@@ -100,6 +107,9 @@ public class AbilityLazer : Ability
             rendoRight.enabled = false;
             beamTimer = 0;
             rendoLeft.enabled = false;
+            
+            boxLeft.SetActive(true);
+            boxRight.SetActive(true);
         }
 
         beam(left.position, left.forward, 5f, rendoLeft);
@@ -119,5 +129,13 @@ public class AbilityLazer : Ability
         
         rendo.SetPosition(0, targetPos);
         rendo.SetPosition(1, endPos);
+    }
+    
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 }
