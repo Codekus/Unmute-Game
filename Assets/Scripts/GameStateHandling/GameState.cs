@@ -6,5 +6,6 @@ public static class GameState
 {
     public static int wave = 0;
     public static float timeScale = 1f;
-    
+    public static bool gamePaused = false;
+
 }

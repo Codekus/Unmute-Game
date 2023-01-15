@@ -8,14 +8,14 @@ public class Spawner : MonoBehaviour
      * Start is called before the first frame update
      */
     [SerializeField] public MusicPlayer musicPlayer;
-    [SerializeField] private UpgradeMenu upgradeMenu;
+    [SerializeField] private Canvas upgradeMenu;
     //This means it is 6 times more likely the first item will be spawned
     [SerializeField] public int scewTowardsFirstObstacle = 3;
     public GameObject[] types;
     public Transform[] points;
     void Start()
     {
-
+        upgradeMenu.enabled = false;
     }
 
     // Update is called once per frame
