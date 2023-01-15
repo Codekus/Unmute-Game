@@ -28,7 +28,7 @@ public class VoiceRecognition : MonoBehaviour
 
     [SerializeField] private int bufferSize = 512;
     [SerializeField] private int sampleRate = 16000;
-    [SerializeField] private string modelPath = "Assets\\LangModels\\vosk-model-en-us-0.22-lgraph";
+    [SerializeField] private string modelPath = "LangModels\\vosk-model-en-us-0.22-lgraph";
 
 
     string keyWords;
