@@ -19,8 +19,8 @@ public class BoxGloves : Ability
     // Start is called before the first frame update
     void Start()
     {
-        rBodyLeft = GetComponent<Rigidbody>();
-        rBodyRight = GetComponent<Rigidbody>();
+        rBodyLeft = boxLeft.GetComponent<Rigidbody>();
+        rBodyRight = boxRight.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame

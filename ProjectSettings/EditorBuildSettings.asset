@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleSceneDeathscreen.unity
     guid: d2c263ba9ac78a94b874a8dc1100e00b
   - enabled: 0
@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/MapEditor/MapEditor.unity
+    guid: fcbbae0f1faeb714db15fe3a90eef0c6
+  - enabled: 1
+    path: Assets/Scenes/SampleSceneDeathscreen + Skybox.unity
+    guid: 677470475a65a8546953c7bdf836fd86
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: da7eca4e51cf048489d465bfb3abd0d2, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4bb27e53014f09544b9aeb672390495e, type: 2}
