@@ -18,4 +18,10 @@ public class DeathMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
 }
