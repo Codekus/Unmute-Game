@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class AbilityLazer : Ability
 {
@@ -67,12 +68,10 @@ public class AbilityLazer : Ability
         }
         
         if (!isRdy) return;
-        //print("lazer used");
-        //beam(gameObject.transform.position, gameObject.transform.forward, 5f);
+        
         rendoLeft.enabled = true;
         rendoRight.enabled = true;
-
-        //print("lazer after enabled");
+        
         isRdy = false;
     }
 
@@ -125,7 +124,6 @@ public class AbilityLazer : Ability
         if (Physics.Raycast(ray, out RaycastHit rayHit, length))
         {
             endPos = rayHit.point;
-            //Debug.Log(rayHit.collider.gameObject.name);
         }
         
         rendo.SetPosition(0, targetPos);
@@ -134,9 +132,17 @@ public class AbilityLazer : Ability
     
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("Enemy"))
+        if (col.gameObject.tag == "Enemy")
         {
             Destroy(col.gameObject);
+        }
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
         }
     }
 }
