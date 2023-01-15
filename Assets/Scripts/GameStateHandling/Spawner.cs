@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
      */
     [SerializeField] public MusicPlayer musicPlayer;
     [SerializeField] private Canvas upgradeMenu;
+    [SerializeField] private Transform playHitBox;
     //This means it is 6 times more likely the first item will be spawned
     [SerializeField] public int scewTowardsFirstObstacle = 3;
     public GameObject[] types;
@@ -35,6 +36,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
+                if (type == 1000) type = 5;
                 type = entry.type;
             }
 
@@ -46,8 +48,17 @@ public class Spawner : MonoBehaviour
             {
                 cube = Instantiate(types[type], points[Random.Range(0, points.Length - 1)]);
             }
-            cube.transform.localPosition = Vector3.zero;
-            cube.transform.Rotate(transform.forward, 98 * Random.Range(0, 4));
+            if (type >= 1000)
+            {
+                MyEnemyController enemieScript = cube.GetComponent<MyEnemyController>();
+                enemieScript.pointA = points[3];
+                enemieScript.pointB = points[5];
+                enemieScript.playerObj = playHitBox;
+            }
+            else {
+                cube.transform.localPosition = Vector3.zero;
+                cube.transform.Rotate(transform.forward, 98 * Random.Range(0, 4));
+            }
         }
         else {
             /* open shop here
