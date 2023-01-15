@@ -124,25 +124,10 @@ public class AbilityLazer : Ability
         if (Physics.Raycast(ray, out RaycastHit rayHit, length))
         {
             endPos = rayHit.point;
+            Destroy(rayHit.collider.gameObject);
         }
         
         rendo.SetPosition(0, targetPos);
         rendo.SetPosition(1, endPos);
-    }
-    
-    private void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "Enemy")
-        {
-            Destroy(col.gameObject);
-        }
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            Destroy(other.gameObject);
-        }
     }
 }
