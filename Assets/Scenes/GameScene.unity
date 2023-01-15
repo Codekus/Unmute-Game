@@ -3942,9 +3942,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1330494420}
   - component: {fileID: 1330494421}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BoxGlove
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6396,9 +6396,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1690058184834769856}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boxhandschuhe
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
