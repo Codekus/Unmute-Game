@@ -79,12 +79,13 @@ public class MyEnemyController : MonoBehaviour
     void Fire() {
         print("shoot");
         print(playerPos);
+        
         Vector3 playerPosition = playerObj.position;
         playerPosition.y = playerPosition.y + 1;
         Vector3 direction = (playerPosition - transform.position).normalized;
         GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().AddForce(direction * 300f);
-        bullet.GetComponent<Rigidbody>().velocity = playerPosition * 100f;
+        //bullet.GetComponent<Rigidbody>().velocity = playerPosition * 100f;
 
     }
     

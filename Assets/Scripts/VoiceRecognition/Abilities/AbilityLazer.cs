@@ -11,7 +11,7 @@ public class AbilityLazer : Ability
     
     private bool isRdy;
     private float cooldownTimer = 0;
-    private float maxCooldown = 10f;
+    private float maxCooldown = 14f;
     private float beamTimer = 0;
     private int maxLevel = 2;
     private int currentLevel = 0;
@@ -92,7 +92,7 @@ public class AbilityLazer : Ability
             cooldownTimer += Time.deltaTime * (1 / Time.timeScale);
             _timerSprite.fillAmount = 1 - (cooldownTimer / maxCooldown);
         }
-        if (cooldownTimer > 10)
+        if (cooldownTimer > maxCooldown)
         {
             isRdy = true;
             cooldownTimer = 0;
@@ -113,8 +113,8 @@ public class AbilityLazer : Ability
             boxRight.SetActive(true);
         }
 
-        beam(left.position, left.forward, 5f, rendoLeft);
-        beam(right.position, right.forward, 5f, rendoRight);
+        beam(left.position, left.forward, 20f, rendoLeft);
+        beam(right.position, right.forward, 20f, rendoRight);
     }
 
     void beam(Vector3 targetPos, Vector3 direction, float length, LineRenderer rendo)
