@@ -124,6 +124,8 @@ public class AbilityLazer : Ability
         if (Physics.Raycast(ray, out RaycastHit rayHit, length))
         {
             endPos = rayHit.point;
+
+            GameState.ememieDestoyed();
             Destroy(rayHit.collider.gameObject);
         }
         

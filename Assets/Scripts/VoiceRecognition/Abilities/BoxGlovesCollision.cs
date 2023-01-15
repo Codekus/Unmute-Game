@@ -9,6 +9,7 @@ public class BoxGlovesCollision : MonoBehaviour
         
         if (other.gameObject.tag.Equals("Enemy"))
         {
+            GameState.ememieDestoyed();
             Destroy(other.gameObject);
             
         }
