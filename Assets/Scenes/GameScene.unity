@@ -3942,9 +3942,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1330494420}
   - component: {fileID: 1330494421}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BoxGlove
-  m_TagString: Weapon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4159,7 +4159,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1432024234}
   - component: {fileID: 1432024236}
-  m_Layer: 7
+  - component: {fileID: 1432024237}
+  m_Layer: 0
   m_Name: LaserBeamRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4280,6 +4281,19 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!65 &1432024237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432024233}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: 0, y: -0.148, z: 0.5}
 --- !u!1 &1457621531
 GameObject:
   m_ObjectHideFlags: 0
@@ -4516,7 +4530,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1535948811}
   - component: {fileID: 1535948812}
-  m_Layer: 7
+  - component: {fileID: 1535948813}
+  m_Layer: 0
   m_Name: LaserBeamLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4637,6 +4652,19 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!65 &1535948813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535948810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: 0, y: -0.148, z: 0.5}
 --- !u!114 &1586441120 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8553364197529364881, guid: 885ecae56b16f13428a67de5ae482a72, type: 3}
@@ -6129,13 +6157,13 @@ GameObject:
   - component: {fileID: 7450511915602609940}
   - component: {fileID: 7450511915602609942}
   - component: {fileID: 7450511915602609941}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BoxRechts
-  m_TagString: Weapon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &889100623667712981
 Transform:
   m_ObjectHideFlags: 0
@@ -6396,9 +6424,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1690058184834769856}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Boxhandschuhe
-  m_TagString: Weapon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6416,13 +6444,13 @@ GameObject:
   - component: {fileID: 3769081622595444770}
   - component: {fileID: 8087213766406855986}
   - component: {fileID: 8087213766406855985}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BoxLinks
-  m_TagString: Weapon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &2697185892452822163
 PrefabInstance:
   m_ObjectHideFlags: 0
