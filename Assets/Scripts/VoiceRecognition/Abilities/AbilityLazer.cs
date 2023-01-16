@@ -112,9 +112,14 @@ public class AbilityLazer : Ability
             boxLeft.SetActive(true);
             boxRight.SetActive(true);
         }
+        else if (beamTimer < 5)
+        {
+            beam(left.position, left.forward, 20f, rendoLeft);
+            beam(right.position, right.forward, 20f, rendoRight);
+        }
 
-        beam(left.position, left.forward, 20f, rendoLeft);
-        beam(right.position, right.forward, 20f, rendoRight);
+        
+        
     }
 
     void beam(Vector3 targetPos, Vector3 direction, float length, LineRenderer rendo)
@@ -128,6 +133,7 @@ public class AbilityLazer : Ability
 
             if (rayHit.collider.tag.Equals("Enemy"))
             {
+                print("lasered");
                 GameState.ememieDestoyed();
                 Destroy(rayHit.collider.gameObject);
             }

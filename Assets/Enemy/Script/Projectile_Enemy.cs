@@ -29,6 +29,6 @@ public class Projectile_Enemy : MonoBehaviour
 
      void Update()
      {
-         transform.position += velocity * Time.deltaTime * 7;
+         transform.position += velocity * Time.deltaTime * 5.5f;
      }
 }
