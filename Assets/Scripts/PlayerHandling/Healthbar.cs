@@ -10,7 +10,7 @@ public class Healthbar : MonoBehaviour
     [SerializeField] private Image _healthbarSprite;
     [SerializeField] private Canvas _canvas;
     private GameObject _spawner;
-    private float _maxHealth = 20000;
+    private float _maxHealth = 20;
     private float currentHealth;
     
 
