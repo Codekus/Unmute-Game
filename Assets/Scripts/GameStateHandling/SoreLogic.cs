@@ -11,7 +11,7 @@ public class SoreLogic : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(!GameState.gamePaused) GameState.score += Time.deltaTime * 10;
+        if(!GameState.gamePaused && !GameState.isDead) GameState.score += Time.deltaTime * 10;
         text.text = "" + (int) GameState.score;
     }
 }

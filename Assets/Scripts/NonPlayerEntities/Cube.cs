@@ -32,6 +32,7 @@ public class Cube : MonoBehaviour
     void OnDestroy()
     {
         source.PlayOneShot(clip);
+        if(!GameState.isDead) AudioSource.PlayClipAtPoint(clip, transform.position);
         SpawnParticle();
     }
     

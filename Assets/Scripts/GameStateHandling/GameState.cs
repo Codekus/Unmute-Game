@@ -11,6 +11,8 @@ public class GameState
     public static float score = 0;
     public static float multiplyer = 1;
     public static bool gamePaused = false;
+
+    public static bool isDead = false;
     public static void resetCombo() {
         multiplyer = 1;
     }

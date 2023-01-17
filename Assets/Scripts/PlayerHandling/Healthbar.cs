@@ -22,6 +22,7 @@ public class Healthbar : MonoBehaviour
         print(_canvas);
         _canvas.enabled = false;
         _spawner = GameObject.Find("Spawner");
+        updateHealthbar(_maxHealth, currentHealth);
 
         
         
@@ -37,12 +38,19 @@ public class Healthbar : MonoBehaviour
     public void onDeath()
     {
         print("DEAD");
+        GameState.isDead = true;
         _canvas.enabled = true;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] weapons = GameObject.FindGameObjectsWithTag("Weapon");
         Destroy(_spawner);
         foreach(GameObject enemy in enemies)
         {
             GameObject.Destroy(enemy);
+        }
+        
+        foreach(GameObject weapon in weapons)
+        {
+            GameObject.Destroy(weapon);
         }
     }
 
