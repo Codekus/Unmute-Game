@@ -30,8 +30,8 @@ public class MusicPlayer : MonoBehaviour
         return audioSource.isPlaying;
     }
 
-    public Entry getEntry() {
-        return state.getEntry(audioSource.timeSamples);
+    public Entry getEntry(int delayInSamples) {
+        return state.getEntry(audioSource.timeSamples + delayInSamples);
     }
 
     public int playNextSong() {

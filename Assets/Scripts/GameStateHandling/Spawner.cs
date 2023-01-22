@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] public int scewTowardsFirstObstacle = 3;
     public GameObject[] types;
     public Transform[] points;
+    float timer = 0;
     void Start()
     {
         upgradeMenu.enabled = false;
@@ -23,7 +24,8 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         if(GameState.gamePaused) return;
-        Entry entry = musicPlayer.getEntry();
+
+        Entry entry = musicPlayer.getEntry((int) (441000*GameState.timeScale));
         
         if (entry != null)
         {
