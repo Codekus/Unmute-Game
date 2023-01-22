@@ -12,7 +12,7 @@ public class AbilityLazer : Ability
     private bool isRdy;
     private float cooldownTimer = 0;
     private float maxCooldown = 14f;
-    private float beamTimer = 0;
+    private float beamTimer = 5;
     private int maxLevel = 2;
     private int currentLevel = 0;
 
@@ -63,7 +63,8 @@ public class AbilityLazer : Ability
     {
         
         if (!isRdy) return;
-        
+
+        beamTimer = 0;
         if (boxLeft.activeSelf == true)
         {
             boxLeft.SetActive(false);
@@ -106,7 +107,7 @@ public class AbilityLazer : Ability
         if (beamTimer > 5)
         {
             rendoRight.enabled = false;
-            beamTimer = 0;
+            beamTimer = 5;
             rendoLeft.enabled = false;
             
             boxLeft.SetActive(true);
