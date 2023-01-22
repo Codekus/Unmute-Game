@@ -10,6 +10,7 @@ public class UpgradeMenu : MonoBehaviour
 
     
     [SerializeField] private Canvas menu;
+    private bool upgradeUsed = false;
 
     [SerializeField] private GameObject laserLvl;
     [SerializeField] private GameObject shieldLvl;
@@ -43,7 +44,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void UpgradeLaser()
     {
-        print(abilityLazer.getCurrentLvl() + " / " + abilityLazer.getMaxlvl());
+        if (upgradeUsed) return;
         if (abilityLazer.getCurrentLvl() == abilityLazer.getMaxlvl())
         {
             return;
@@ -51,23 +52,27 @@ public class UpgradeMenu : MonoBehaviour
         abilityLazer.lvlUp();
         SetLvlText();
         abilityLazer.setMaxCooldown(abilityLazer.getMaxCooldown() - 2);
-  //      menu.enabled = false;
+        upgradeUsed = true;
+        //      menu.enabled = false;
 
     }
     
     public void UpgradeShield()
     {
+        if (upgradeUsed) return;
         if (abilityShield.getCurrentLvl() == abilityShield.getMaxlvl())
         {
             return;
         }
         abilityShield.lvlUp();
         SetLvlText();
+        upgradeUsed = true;
  //       menu.enabled = false;
     }
     
     public void UpgradeSlowdown()
     {
+        if (upgradeUsed) return;
         if (abiltySlowdown.getCurrentLvl() == abiltySlowdown.getMaxlvl())
         {
             return;
@@ -75,6 +80,7 @@ public class UpgradeMenu : MonoBehaviour
         abiltySlowdown.lvlUp();
         SetLvlText();
         abiltySlowdown.increaseDuration();
+        upgradeUsed = true;
 //        menu.enabled = false;
     }
 
@@ -82,6 +88,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         GameState.gamePaused = false;
         menu.enabled = false;
+        upgradeUsed = false;
     }
 
     public void Heal()
