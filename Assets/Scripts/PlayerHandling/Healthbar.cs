@@ -84,8 +84,7 @@ public class Healthbar : MonoBehaviour
     {
         return _maxHealth;
     }
-    
-    
 
+    private float timer = 0;
     
 }
