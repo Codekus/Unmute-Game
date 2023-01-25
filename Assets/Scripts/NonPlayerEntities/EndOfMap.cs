@@ -21,6 +21,9 @@ public class EndOfMap : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Enemy")) print("combo reset");
-        Destroy(other.gameObject);
+        if (other.gameObject.tag.Equals("Enemy") || other.gameObject.tag.Equals("Weapon")){
+            Destroy(other.gameObject);
+         }
+        
     }
 }
